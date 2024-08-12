@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+		p{
+			margin:0;
+		}
+
+        footer {
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-container img {
+            margin-right: 20px;
+        }

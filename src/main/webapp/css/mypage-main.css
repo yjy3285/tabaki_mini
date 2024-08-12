@@ -1,0 +1,93 @@
+@charset "UTF-8";
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            max-width: 1200px;
+            margin: 40px auto 40px auto;
+        }
+        .sidebar {
+            width: 25%;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            width: 70%;
+            padding-left: 20px;
+            
+        }
+        .content h2 {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+        .profile-info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color : white;
+        }
+        .profile-info div {
+            margin-right: 20px;
+        }
+        .profile-info div:last-child {
+            margin-right: 0;
+        }
+        .profile-info p {
+            margin: 0;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        
+        .recent-orders,
+        .recent-inquiries {
+            margin-bottom: 20px;
+        }
+        .recent-orders h3,
+        .recent-inquiries h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f8f5f0;
+        }
