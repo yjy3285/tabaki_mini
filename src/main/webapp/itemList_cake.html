@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/center.css">
 <meta charset="UTF-8">
 <title>케이크</title>
 <style>
@@ -257,6 +258,15 @@
     
     <!-- 상품 목록 페이지 시작 -->
     <div id="contentWrapper">
+    
+    <!-- Breadcrumbs 영역 시작-->
+	<nav class="breadcrumb-container">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+			<li class="breadcrumb-item"><a href="#">케이크</a></li>
+		</ol>
+	</nav>
+	
         <!-- 상품 목록 내용 -->
         <div id="contentWrap">
             <!-- 지역 선택 분류 상단 메뉴 -->
@@ -275,28 +285,6 @@
                     <b id="totalItemCount"></b>
                     개의 상품이 있습니다
                 </div>
-                <div class="group_sort">
-                    <ul>
-                        <li>
-                            <a href="">판매량순</a>
-                        </li>
-                        <li>
-                            <a href="">낮은가격순</a>
-                        </li>
-                        <li>
-                            <a href="">높은가격순</a>
-                        </li>
-                        <li>
-                            <a href="">신상품순</a>
-                        </li>
-                        <li>
-                            <a href="">조회수</a>
-                        </li>
-                        <li>
-                            <a href="">리뷰순</a>
-                        </li>
-                    </ul>
-                </div>            
             </div>
             <!-- 상품 목록 표시단 -->
             <div class="item_wrap" id="itemWrap">
@@ -319,15 +307,15 @@
 	        { title: "갸또 쇼꼴라", price: "38,000원", img: "./img/cake/갸또 쇼꼴라.jpg", badge: "BEST" },
 	        { title: "고구마 생크림 케익", price: "33,000원", img: "./img/cake/고구마 생크림 케익.jpg", badge: "NEW" },
 	        { title: "까망베르 치즈케익", price: "29,000원", img: "./img/cake/까망베르 치즈케익.jpg", badge: "추천" },
-	        { title: "바닐라 생크림 케익", price: "33,000원", img: "./img/cake/바닐라 생크림 케익.jpg", badge: "인기" },
+	        { title: "바닐라 생크림 케익", price: "33,000원", img: "./img/cake/바닐라 생크림 케익.jpg" },
 	        { title: "샤를로뜨", price: "42,000원", img: "./img/cake/샤를로뜨.jpg", badge: "BEST" },
 	        { title: "쉭쎄", price: "29,000원", img: "./img/cake/쉭쎄.jpg", badge: "NEW" },
 	        { title: "스위스롤 & 말차롤케익", price: "20,000원", img: "./img/cake/스위스롤 & 말차롤케익.jpg", badge: "추천" },
-	        { title: "티라미수", price: "29,000원", img: "./img/cake/티라미수.jpg", badge: "인기" },
+	        { title: "티라미수", price: "29,000원", img: "./img/cake/티라미수.jpg" },
 	        { title: "파인치즈 케익", price: "39,000원", img: "./img/cake/파인치즈 케익.jpg", badge: "BEST" },
 	        { title: "프레지에 에큠", price: "37,000원", img: "./img/cake/프레지에 에큠.jpg", badge: "NEW" },
 	        { title: "프레지에", price: "39,000원", img: "./img/cake/프레지에.jpg", badge: "추천" },
-	        { title: "후랑보아즈", price: "37,000원", img: "./img/cake/후랑보아즈.jpg", badge: "인기" },
+	        { title: "후랑보아즈", price: "37,000원", img: "./img/cake/후랑보아즈.jpg" },
 	
 	    ];
 
@@ -345,18 +333,23 @@
             itemsToDisplay.forEach(item => {
                 const itemElem = document.createElement('dl');
                 itemElem.classList.add('item_elem');
+                
+                // 배지가 undefined인 경우 배지 요소를 표시하지 않음
+                const badgeHTML = item.badge ? `<div class="badge">${item.badge}</div>` : '';
+                const imgSrc = item.img || ''; // 이미지가 없는 경우 빈 문자열 할당
+
                 itemElem.innerHTML = `
-                    <div class="badge">${item.badge}</div>
+                    ${badgeHTML}
                     <dt class="thumb">
-                        <img class="prd_img" src="${item.img}">
-                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}')">
+                        <img class="prd_img" src="${imgSrc}" alt="${item.title}">
+                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}', '${imgSrc}')">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
                             <li class="prd_title">
-                                <a href="#">${item.title}</a>
+                                <a href="#" onclick="viewItemDetail('${item.title}', '${item.price}', '${imgSrc}', '${item.badge}')">${item.title}</a>
                             </li>
                             <li class="prd_price">
                                 ${item.price}
@@ -371,7 +364,7 @@
                 itemWrap.appendChild(itemElem);
             });
         }
-
+        
         function setupPagination(totalItems) {
             const pagination = document.getElementById('pagination');
             const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -399,59 +392,35 @@
             }
         }
 
-        function addToCart(title, price) {
-            // 상품 정보를 카트로 추가하는 로직 구현
-            alert(`장바구니에 추가되었습니다: ${title} - ${price}`);
-            // 실제 구현에서는 서버로 데이터 전송하거나 로컬 스토리지에 저장하는 등의 작업을 수행
-        }
+     // 장바구니에 상품 추가
+        function addToCart(title, price, img) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-        // 초기화
-        document.getElementById('totalItemCount').textContent = items.length;
-        displayItems(currentPage);
-        setupPagination(items.length);
-        
-        <!-- 상품 페이지단 js -->
-        
-        function displayItems(page) {
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const itemsToDisplay = items.slice(startIndex, endIndex);
+            const existingItemIndex = cartItems.findIndex(item => item.title === title);
+
+            if (existingItemIndex >= 0) {
+                cartItems[existingItemIndex].quantity += 1;
+            } else {
+                cartItems.push({
+                    title,
+                    price,
+                    img: img || 'default-image-path.jpg', // img가 undefined인 경우 기본 이미지 사용
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert('장바구니에 추가되었습니다!');
             
-            const itemWrap = document.getElementById('itemWrap');
-            itemWrap.innerHTML = '';
-
-            itemsToDisplay.forEach(item => {
-                const itemElem = document.createElement('dl');
-                itemElem.classList.add('item_elem');
-                itemElem.innerHTML = `
-                    <div class="badge">${item.badge}</div>
-                    <dt class="thumb">
-                        <img class="prd_img" src="${item.img}">
-                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}', '${item.img}')">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
-                        </div>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li class="prd_title">
-                                <a href="#" onclick="viewItemDetail('${item.title}', '${item.price}', '${item.img}', '${item.badge}')">${item.title}</a>
-                            </li>
-                            <li class="prd_price">
-                                ${item.price}
-                            </li>
-                            <li class="prd_review">
-                                <em>상품후기</em>
-                                "상품후기갯수"
-                            </li>
-                        </ul>
-                    </dd>
-                `;
-                itemWrap.appendChild(itemElem);
-            });
+            if (confirm('장바구니로 이동하시겠습니까?')) {
+                window.location.href = 'orderCart.html';  // 장바구니 페이지로 이동
+            }
         }
 
+        // 상품 상세보기
         function viewItemDetail(title, price, img, badge) {
-            const itemDetail = { title, price, img, badge };
+            const itemDetail = { title, price, img: img || 'default-image-path.jpg', badge };
             localStorage.setItem('selectedItem', JSON.stringify(itemDetail));
             window.location.href = 'itemDetail.html';
         }
