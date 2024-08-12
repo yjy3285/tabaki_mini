@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>고객센터</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/center.css">
+</head>
+<body>
+   <section class="page-container mb-5" style="max-width: 1200px;">
+        <!-- Breadcrumbs 영역 시작-->
+        <nav class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="helpcenter-board-list.html">고객센터</a></li>
+                <li class="breadcrumb-item active" aria-current="page">기타문의</li>
+            </ol>
+        </nav>
+        <!-- Breadcrumbs 영역 종료-->
+
+        <!-- 메인 컨테이너 -->
+        <div class="list-container">
+            <!-- 서브 네비게이터 시작 -->
+            <div class="d-flex justify-content-center">
+                <h2 class="h2 mb-5 border-bottom" style="width: 100px;">기타문의</h2>
+            </div>
+            <ul class="nav nav-tabs justify-content-center mb-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">공지사항</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">상품문의</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="helpcenter-board-list.html">기타문의</a>
+                </li>
+            </ul>
+            <!-- 서브 네비게이터 종료 -->
+
+            <!-- 게시글 섹션 시작-->
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <div class="post-info">
+                        <h4 class="card-title h4">결제하기 클릭이 안되요. ㅠㅠ</h4>
+                        <p class="card-text">
+                            <small class="text-muted">등록일: 2024.08.04 12:08:25 | 등록자: 홍길동 | 조회수: 1232</small>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="post-content">
+                        <p class="card-text">
+                            구매 했는데 결제하기 버튼이 클릭이 안되네요.<br>
+                            결제가 안 나와요.<br>
+                            몇번을 시도하다가 지쳐서 글 남겨요.<br>
+                            어떻게 하면 되나요?<br><br>
+                            그리고 핸드폰으로는 결제할 수 없는건가요?<br>
+                            핸드폰으로 결제하기 눌러도 결제가 안되더라구요.ㅠㅠ
+                        </p>
+                    </div>
+                    
+                    <a href="helpcenter-board-list.html" class="btn btn-outline-secondary float-right mr-1">목록으로</a>
+                    <a href="#" class="btn btn-outline-secondary float-right mr-1">삭제</a>
+                    <a href="helpcenter-board-write.html" class="btn btn-outline-secondary float-right mr-1">수정</a>
+                </div>
+            </div>
+            <!-- 게시글 섹션 종료-->
+
+            <!-- 댓글 리스트 -->
+            <ul class="list-group mb-4">
+                <li class="list-group-item">
+                    <div class="reply-info">
+                        <p><strong>댓글 작성자</strong> <small class="text-muted">2024-08-04 13:12:34</small> 
+                            <button class="btn btn-light disabled btn-sm"><i class="fas fa-times"></i></button></button>
+                        </p>
+                    </div>
+                    <div class="reply-content">
+                        <p>저도 같은 문제를 겪고 있습니다. 해결 방법이 궁금하네요.</p>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="reply-author">
+                        <p><strong>관리자</strong> <small class="text-muted">2024-08-04 13:15:22</small>
+                            <button class="btn btn-light disabled btn-sm"><i class="fas fa-times"></i></button></button>
+                        </p>
+                    </div>
+                    <div class="reply-content">
+                        <p>안녕하세요, 고객님. 불편을 드려 죄송합니다. 현재 해당 문제를 확인 중에 있습니다. 빠른 시일 내에 해결하도록 하겠습니다.</p>
+                    </div>
+                </li>
+            </ul>
+            <!-- 댓글 리스트 종료 -->
+            <hr class="hr"/>
+            <!-- 댓글 작성 폼 시작 -->
+            <div class="form-container border p-4 my-4">
+                <form class="d-flex flex-column">
+                    <div class="form-group">
+                        <label for="comment" class="mb-1">댓글</label>
+                        <textarea class="form-control" id="comment" rows="3" placeholder="내용"></textarea>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                        <div class="form-input-wrapper d-flex justify-content-center">
+                            <div class="form-input-wrapper d-flex align-items-center">
+                                <label class="control-label mb-0 mr-3" for="memberName">작성자</label>
+                                <input class="form-control" id="memberName" type="text" placeholder="엄상식" readonly>
+                            </div>
+                            
+                            <!--
+                            <input type="password" class="form-control" id="password" placeholder="패스워드">
+                            -->
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-bottom">댓글등록</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 댓글 작성 폼 종료 -->
+            <hr class="hr"/>
+            <!-- 이전/이후 게시판 리스트 시작 -->
+            <table class="table table-hover my-4">
+                <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>제목</th>
+                        <th>이름</th>
+                        <th>날짜</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>3</b></td>
+                        <td><a href="#">취소문의요&ensp;</a><span class="badge badge-info">NEW</span></td>
+                        <td>라*임</td>
+                        <td>2024-08-04</td>
+                        <td>1141</td>
+                    </tr>
+                    <tr>
+                        <td><b>2</b></td>
+                        <td><a href="#">결제하기 클릭이 안되요. ㅠㅠ&ensp;</a> <span class="badge badge-primary">답변완료</span></td>
+                        <td>홍*동</td>
+                        <td>2024-08-03</td>
+                        <td>1232</td>
+                    </tr>
+                    <tr>
+                        <td><b>1</b></td>
+                        <td><a href="#"><i class="fas fa-lock fa-xs"></i> 택배가 젖어 왔어요&ensp;</a><span class="badge badge-primary">답변완료</span></td>
+                        <td>민*종</td>
+                        <td>2024-08-03</td>
+                        <td>1037</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 이전/이후 게시판 리스트 종료 -->
+        </div>
+    </section>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
