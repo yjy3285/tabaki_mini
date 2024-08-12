@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<title>빵</title>
+<style>
+    body {
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    #wrap {
+        position: relative;
+        min-width: 1440px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    #contentWrapper {
+        width: 1200px;
+        padding: 40px 0;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        border-top: 1px solid #e7e8e9;
+        min-height: calc(100vh - 579px);
+    }
+
+    #contentWrapper h1 {
+        color: white;
+        -webkit-text-stroke: 1px #F8F5F0;
+        font-weight: bold;
+    }
+
+    #content {
+        margin: 40px auto;
+        position: relative;
+        width: 1200px;
+    }
+
+    .page_location {
+        text-align: left;
+        padding-top: 19px;
+        margin-bottom: 10px;
+        font-size: 0;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    #top_category {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #top_category ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+    }
+
+    #top_category li {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #fff;        
+    }
+
+    #top_category li:hover {
+        background-color: #f0f0f0;
+    }
+
+    .item_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px;
+        background-color: #F8F5F0;
+        border-top: 2px solid #ddd;
+    }
+
+    .item_total {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .group_sort ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .group_sort li {
+        margin: 0 10px;
+    }
+
+    .group_sort a {
+        text-decoration: none;
+        color: #555;
+    }
+
+    .group_sort a:hover {
+        color: #000;
+    }
+
+    .item_wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .item_elem {
+        background-color: #fff;
+        border: 1px solid #e7e8e9;
+        border-radius: 5px;
+        padding: 20px;
+        width: calc(25% - 30px); /* 4개씩 배치되도록 설정 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+	.thumb {
+	    position: relative;
+	    width: 100%;
+	    text-align: center;
+	}
+	
+	.thumb img {
+	    max-width: 100%;
+	    border-radius: 5px;
+	}
+	
+	.thumb .cart-overlay {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    background: rgba(0, 0, 0, 0.7);
+	    padding: 15px;
+	    border-radius: 50%;
+	    display: none; /* 기본적으로 숨김 */
+	    width: 60px;
+	    height: 60px;
+	    justify-content: center;
+	    align-items: center;
+	    cursor: pointer;
+	    z-index: 20; /* 글자 위에 표시되도록 */
+	}
+	
+	.thumb .cart-overlay img {
+        width: 30px;
+        height: 30px;
+        filter: invert(1); /* 아이콘 색상을 흰색으로 변경 */
+    }
+	
+	.thumb:hover .cart-overlay {
+	    display: flex; /* 마우스를 올렸을 때만 표시 */
+	}
+	
+	.badge {
+	    font-size: 0.75em;
+	    padding: 5px 10px;
+	    border-radius: 3px;
+	    background-color: #f39c12;
+	    color: #fff;
+	    position: absolute;
+	    top: 10px;
+	    right: 10px;
+	    z-index: 10; /* 이미지 위에 표시되도록 */
+	}
+
+
+    .prd_title a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1em;
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .prd_title a:hover {
+        color: #000;
+    }
+
+    .prd_price {
+        color: #e74c3c;
+        font-size: 1.2em;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .prd_review {
+        color: #555;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    dd {
+        padding: 0;
+    }
+    
+    dd ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .pagination {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+<div id="wrap">
+    <!-- 헤더 자리 -->
+    
+    <!-- 상품 목록 페이지 시작 -->
+    <div id="contentWrapper">
+        <!-- 상품 목록 내용 -->
+        <div id="contentWrap">
+            <!-- 지역 선택 분류 상단 메뉴 -->
+            <div id="top_category">
+                <ul>
+                    <li>빵</li>
+                    <li>케이크</li>
+                    <li>쿠키</li>
+                </ul>
+            </div>
+            <!-- 상품 목록 하단 시작 -->
+            <!-- 상품 목록 안내단 -->
+            <div class="item_info">
+                <div class="item_total">
+                    총 
+                    <b id="totalItemCount"></b>
+                    개의 상품이 있습니다.
+                </div>
+                <div class="group_sort">
+                    <ul>
+                        <li>
+                            <a href="">판매량순</a>
+                        </li>
+                        <li>
+                            <a href="">낮은가격순</a>
+                        </li>
+                        <li>
+                            <a href="">높은가격순</a>
+                        </li>
+                        <li>
+                            <a href="">신상품순</a>
+                        </li>
+                        <li>
+                            <a href="">조회수</a>
+                        </li>
+                        <li>
+                            <a href="">리뷰순</a>
+                        </li>
+                    </ul>
+                </div>            
+            </div>
+            <!-- 상품 목록 표시단 -->
+            <div class="item_wrap" id="itemWrap">
+                <!-- 상품이 동적으로 추가되는 부분 -->
+            </div>
+        </div>
+        
+        <!-- 페이지네이션 -->
+        <div>
+          <ul class="pagination" id="pagination">
+          </ul>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script>
+        const items = [
+            { title: "걀렛뜨 데로와 푀유떼", price: "9,800원", img: "./img/bread/걀렛뜨 데로와 푀유떼.jpg", badge: "BEST" },
+            { title: "그리오틴 케익(6EA)", price: "14,800원", img: "./img/bread/그리오틴 케익(6EA).jpg", badge: "NEW" },
+            { title: "되리브르(대)", price: "15,000원", img: "./img/bread/되리브르(대).jpg", badge: "추천" },
+            { title: "땅드레스 아로랑쥬(6EA)", price: "14,800원", img: "./img/bread/땅드레스 아로랑쥬(6EA).jpg", badge: "인기" },
+            { title: "로데브", price: "4,500원", img: "./img/bread/로데브.jpg", badge: "BEST" },
+            { title: "르뱅 꾸뻬", price: "3,800원", img: "./img/bread/르뱅 꾸뻬.jpg", badge: "NEW" },
+            { title: "마블케익", price: "20,000원", img: "./img/bread/마블케익.jpg", badge: "추천" },
+            { title: "바따르", price: "4,200원", img: "./img/bread/바따르.jpg", badge: "인기" },
+            { title: "빠리지앵", price: "5,900원", img: "./img/bread/빠리지앵.jpg", badge: "BEST" },
+            { title: "뺑드미", price: "4,900원", img: "./img/bread/뺑드미.jpg", badge: "NEW" },
+            { title: "세글 누아레쟁", price: "4,000원", img: "./img/bread/세글 누아레쟁.jpg", badge: "추천" },
+            { title: "오렌지 케익", price: "22,000원", img: "./img/bread/오렌지케익.jpg", badge: "인기" },
+            { title: "유산균 발효 식빵", price: "4,000원", img: "./img/bread/유산균 발효 식빵.jpg", badge: "BEST" },
+            { title: "이탈리안 레몬케익", price: "21,000원", img: "./img/bread/이탈리안 레몬케익.jpg", badge: "NEW" },
+            { title: "잉글리쉬 파운드", price: "19,000원", img: "./img/bread/잉글리쉬 파운드.jpg", badge: "추천" },
+            { title: "자연효모빵", price: "4,600원", img: "./img/bread/자연효모빵.jpg", badge: "인기" },
+        ];
+
+        const itemsPerPage = 12; // 페이지당 최대 12개 표시
+        let currentPage = 1;
+
+        function displayItems(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const itemsToDisplay = items.slice(startIndex, endIndex);
+            
+            const itemWrap = document.getElementById('itemWrap');
+            itemWrap.innerHTML = '';
+
+            itemsToDisplay.forEach(item => {
+                const itemElem = document.createElement('dl');
+                itemElem.classList.add('item_elem');
+                itemElem.innerHTML = `
+                    <div class="badge">${item.badge}</div>
+                    <dt class="thumb">
+                        <img class="prd_img" src="${item.img}">
+                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}')">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
+                        </div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li class="prd_title">
+                                <a href="#">${item.title}</a>
+                            </li>
+                            <li class="prd_price">
+                                ${item.price}
+                            </li>
+                            <li class="prd_review">
+                                <em>상품후기</em>
+                                "상품후기갯수"
+                            </li>
+                        </ul>
+                    </dd>
+                `;
+                itemWrap.appendChild(itemElem);
+            });
+        }
+
+        function setupPagination(totalItems) {
+            const pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.classList.add('page-item');
+                if (i === currentPage) li.classList.add('active');
+                
+                const a = document.createElement('a');
+                a.classList.add('page-link');
+                a.href = '#';
+                a.textContent = i;
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayItems(currentPage);
+                    setupPagination(totalItems);
+                });
+                
+                li.appendChild(a);
+                pagination.appendChild(li);
+            }
+        }
+
+        function addToCart(title, price) {
+            // 상품 정보를 카트로 추가하는 로직 구현
+            alert(`장바구니에 추가되었습니다: ${title} - ${price}`);
+            // 실제 구현에서는 서버로 데이터 전송하거나 로컬 스토리지에 저장하는 등의 작업을 수행
+        }
+
+        // 초기화
+        document.getElementById('totalItemCount').textContent = items.length;
+        displayItems(currentPage);
+        setupPagination(items.length);
+
+    </script>
+</div>
+</body>
+</html>
