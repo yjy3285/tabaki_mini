@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>토박이 베이커리 - 회원가입</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/4/sandstone/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
+            unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+        }
+        h1 {
+            text-align: center;
+        }
+        body {
+            font-family: 'Pretendard-Regular','Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+        }
+        nav.breadcrumb {
+            background-color: white;
+            font-size: 13px;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+        nav.breadcrumb a {
+            color: #333;
+        }
+        nav.breadcrumb a .fas {
+            margin-right: 10px;
+        }
+        .signup-header {
+            display: flex;
+            gap: 10px;
+        }
+        .signup-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .signup-header p {
+            font-size: 14px;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+        }
+        table td {
+            vertical-align: middle;
+        }
+        table td:first-child {
+            width: 30%;
+        }
+        .form-text {
+            margin-bottom: 0;
+        }
+        .input-small {
+            width: 300px !important;
+        }
+        .input-medium {
+            width: 600px !important;
+        }
+        .input-small-postcode {
+            width: 200px !important;
+        }
+        .input-tiny {
+        	width: 100px !important;
+        }
+        .birthday-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .birthday-row select,
+        .birthday-row .form-check {
+            margin-bottom: 0;
+        }
+        .input-group .form-control {
+            flex: 0 0 auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="#">홈</a>
+            <a class="breadcrumb-item" href="#">회원서비스</a>
+            <a class="breadcrumb-item" href="#">회원가입</a>
+        </nav>
+        <br>
+        <div class="signup-section">
+            <h1><b>회원가입</b></h1>
+            <br>
+            <br>
+            <form action="/signup" method="post">
+	            <div class="signup-header">
+	                <h1><b>회원정보입력</b></h1>
+	                <p>* 표시는 필수입력항목입니다.</p>
+	            </div>
+	            <br>
+                <table class="table table-bordered" style="width: 900px; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td>* 이름</td>
+                            <td><input type="text" class="form-control input-small" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td>* 아이디</td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-small" name="username" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" type="button" onclick="showAlert()">중복확인</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>* 비밀번호</td>
+                            <td>
+                                <input type="password" class="form-control input-small" name="password" required>
+                                <small class="form-text text-muted">영문 대소문자/숫자/특수문자를 혼용하여 3종류 10-16자</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>* 비밀번호 확인</td>
+                            <td><input type="password" class="form-control input-small" name="password_confirm" required></td>
+                        </tr>
+                        <tr>
+                            <td>* 생일/성별</td>
+                            <td>
+                                <div class="birthday-row">
+                                    <select class="form-control input-tiny" name="birth_year" required>
+                                        <option>선택</option>
+                                        <script>
+                                            for (let i = new Date().getFullYear(); i >= 1900; i--) {
+                                                document.write('<option value="'+i+'">'+i+'</option>');
+                                            }
+                                        </script>
+                                    </select>
+                                    <h6> 년 </h6>
+                                    <select class="form-control input-tiny" name="birth_month" required>
+                                        <option>선택</option>
+                                        <script>
+                                            for (let i = 1; i <= 12; i++) {
+                                                document.write('<option value="'+i+'">'+i+'</option>');
+                                            }
+                                        </script>
+                                    </select>
+                                    <h6> 월 </h6>
+                                    <select class="form-control input-tiny" name="birth_day" required>
+                                        <option>선택</option>
+                                        <script>
+                                            for (let i = 1; i <= 31; i++) {
+                                                document.write('<option value="'+i+'">'+i+'</option>');
+                                            }
+                                        </script>
+                                    </select>
+                                    <h6> 일 </h6>
+                                    &nbsp;
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="M" required>
+                                        <label class="form-check-label">남</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="F" required>
+                                        <label class="form-check-label">여</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>* 주소</td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-small-postcode" id="postcode" name="postcode" placeholder="우편번호" readonly required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" type="button" onclick="execDaumPostcode()">우편번호검색</button>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control mt-2" id="address" name="address" placeholder="주소" style="width: 500px;" readonly required>
+                                <input type="text" class="form-control mt-2" id="address_detail" name="address_detail" placeholder="상세주소" style="width: 500px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>* 휴대폰</td>
+                            <td>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <select class="form-control" name="phone_prefix" required>
+                                            <option>선택</option>
+                                            <option>010</option>
+                                            <option>011</option>
+                                            <option>012</option>
+                                            <option>017</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="phone_middle_number" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="phone_last_number" required>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>* 이메일</td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email_local" style="width: 150px;" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">@</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="email_domain" id="email_domain" style="width: 150px;" required>
+                                    <div class="input-group-append">
+                                        <select class="form-control" name="email_select" id="email_select" required onchange="setEmailDomain()">
+                                            <option value="">직접입력</option>
+                                            <option value="naver.com">naver.com</option>
+                                            <option value="daum.net">daum.net</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" type="button" onclick="showAlert()">이메일 중복확인</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>* 본인확인 질문</td>
+                        	<td>
+                        		<div>
+                        			<select class="form-control input-small" name="question" required>
+                                            <option>가장 좋아하는 색깔은?</option>
+                                            <option>가장 좋아하는 동물은?</option>
+                                            <option>내가 다녔던 초등학교는?</option>
+                                            <option>어렸을때의 별명은?</option>
+                                            <option>현재 거주하고 있는 주소는?</option>
+                                        </select>
+                        		</div>
+                        	</td>
+                        </tr>
+                        <tr>
+                        	<td>* 본인확인 답변</td>
+                        	<td><input type="text" class="form-control input-small" name="answer" required></td>
+                        	</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-dark">가입완료</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">이전으로</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert("중복 확인되었습니다");
+        }
+
+        function execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    var addr = '';
+                    
+					if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+						addr = data.roadAddress;
+					} else { // 사용자가 지번 주소를 선택했을 경우(J)
+						addr = data.jibunAddress;
+					};
+					
+                    document.getElementById('postcode').value = data.zonecode;
+                    document.getElementById('address').value = addr;
+                    document.getElementById('address_detail').focus();
+                }
+            }).open();
+        }
+        
+        function setEmailDomain() {
+            var emailSelect = document.getElementById("email_select");
+            var emailDomain = document.getElementById("email_domain");
+            if (emailSelect.value === "") {
+                emailDomain.value = "";
+                emailDomain.readOnly = false;
+            } else {
+                emailDomain.value = emailSelect.value;
+                emailDomain.readOnly = true;
+            }
+        }
+    </script>
+    
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>
