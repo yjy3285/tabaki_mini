@@ -83,6 +83,7 @@
 		padding: 10px 20px;
 		background-color: #007bff;
 		color: #ffffff;
+		color: #c85855;
 		text-decoration: none;
 		border-radius: 5px;
 	}
@@ -210,7 +211,7 @@
 											<!-- 상품 정보단 -->
 											<div class="info_inner">
 												<!-- 상품 이름 출력 -->
-												<h3 class="tit-prd" id="prd-tit-h">로데브</h3>
+												<h3 class="tit-prd" id="prd-tit-h"></h3>
 												<br>
 												<!-- 상품 정보 테이블 나오는 곳 -->
 												<div class="table-opt" id="prd-opt-top">
@@ -229,7 +230,7 @@
 																</th>
 																<td class="price">
 																	<div class="tb-left">
-																		<b>4,500</b> 원
+																		<b></b>
 																	</div>
 																</td>
 															</tr>
@@ -314,7 +315,7 @@
 								<!-- 추천 상품1 -->
 								<div class="col-md-3">
 									<div class="card">
-										<img src="../img/bread/팡도르.jpg" class="card-img-top" alt="상품1">
+										<img src="./img/bread/팡도르.jpg" class="card-img-top" alt="상품1">
 										<div class="card-body">
 											<h5 class="card-title">팡도르</h5>
 											<p class="card-text">22,000원</p>
@@ -325,7 +326,7 @@
 								<!-- 추천 상품2 -->
 								<div class="col-md-3">
 									<div class="card">
-										<img src="../img/bread/파네토네.jpg" class="card-img-top" alt="상품2">
+										<img src="./img/bread/파네토네.jpg" class="card-img-top" alt="상품2">
 										<div class="card-body">
 											<h5 class="card-title">파네토네</h5>
 											<p class="card-text">9,500원</p>
@@ -336,7 +337,7 @@
 								<!-- 추천 상품3 -->
 								<div class="col-md-3">
 									<div class="card">
-										<img src="../img/bread/자연효모빵.jpg" class="card-img-top" alt="상품3">
+										<img src="./img/bread/자연효모빵.jpg" class="card-img-top" alt="상품3">
 										<div class="card-body">
 											<h5 class="card-title">자연효모빵</h5>
 											<p class="card-text">4,600원</p>
@@ -347,7 +348,7 @@
 								<!-- 추천 상품4 -->
 								<div class="col-md-3">
 									<div class="card">
-										<img src="https://i.ibb.co/gDqH37d/유산균%발효%식빵.jpg" class="card-img-top" alt="상품4">
+										<img src="./img/bread/유산균 발효 식빵.jpg" class="card-img-top" alt="상품4">
 										<div class="card-body">
 											<h5 class="card-title">유산균 발효 식빵</h5>
 											<p class="card-text">4,000원</p>
@@ -401,7 +402,24 @@
 
 	</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+	
+	        if (selectedItem) {
+	            // 제목, 가격, 이미지, 배지를 각각의 위치에 표시
+	            document.getElementById('prd-tit-h').textContent = selectedItem.title;
+	            document.querySelector('.price .tb-left b').textContent = selectedItem.price;
+	            document.querySelector('.thumb-wrap img').src = selectedItem.img;
+	
+	            // 상세 이미지 경로 처리
+	            const detailImgSrc = selectedItem.img.replace('.jpg', '_상세.jpg');
+	            document.querySelector('.tab-pane.show.active img').src = detailImgSrc;
+	        }
+	    });
+	</script>
+
 </body>
 </html>

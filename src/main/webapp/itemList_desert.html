@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta charset="UTF-8">
-<title>빵</title>
+<title>디저트</title>
 <style>
     body {
         background-color: #f9f9f9;
@@ -315,26 +315,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
     <script>
-        const items = [
-            { title: "걀렛뜨 데로와 푀유떼", price: "9,800원", img: "./img/bread/걀렛뜨 데로와 푀유떼.jpg", badge: "BEST" },
-            { title: "그리오틴 케익(6EA)", price: "14,800원", img: "./img/bread/그리오틴 케익(6EA).jpg", badge: "NEW" },
-            { title: "되리브르(대)", price: "15,000원", img: "./img/bread/되리브르(대).jpg", badge: "추천" },
-            { title: "땅드레스 아로랑쥬(6EA)", price: "14,800원", img: "./img/bread/땅드레스 아로랑쥬(6EA).jpg", badge: "인기" },
-            { title: "로데브", price: "4,500원", img: "./img/bread/로데브.jpg", badge: "BEST" },
-            { title: "르뱅 꾸뻬", price: "3,800원", img: "./img/bread/르뱅 꾸뻬.jpg", badge: "NEW" },
-            { title: "마블케익", price: "20,000원", img: "./img/bread/마블케익.jpg", badge: "추천" },
-            { title: "바따르", price: "4,200원", img: "./img/bread/바따르.jpg", badge: "인기" },
-            { title: "빠리지앵", price: "5,900원", img: "./img/bread/빠리지앵.jpg", badge: "BEST" },
-            { title: "뺑드미", price: "4,900원", img: "./img/bread/뺑드미.jpg", badge: "NEW" },
-            { title: "세글 누아레쟁", price: "4,000원", img: "./img/bread/세글 누아레쟁.jpg", badge: "추천" },
-            { title: "오렌지 케익", price: "22,000원", img: "./img/bread/오렌지케익.jpg", badge: "인기" },
-            { title: "유산균 발효 식빵", price: "4,000원", img: "./img/bread/유산균 발효 식빵.jpg", badge: "BEST" },
-            { title: "이탈리안 레몬케익", price: "21,000원", img: "./img/bread/이탈리안 레몬케익.jpg", badge: "NEW" },
-            { title: "잉글리쉬 파운드", price: "19,000원", img: "./img/bread/잉글리쉬 파운드.jpg", badge: "추천" },
-            { title: "자연효모빵", price: "4,600원", img: "./img/bread/자연효모빵.jpg", badge: "인기" },
-        ];
+	    const items = [
+	        { title: "그리스넛(6EA)", price: "38,000원", img: "./img/desert/그리스넛(6EA).jpg", badge: "BEST" },
+	        { title: "꼬끼유(12EA)", price: "33,000원", img: "./img/desert/꼬끼유(12EA).jpg", badge: "NEW" },
+	        { title: "노아(6EA)", price: "29,000원", img: "./img/desert/노아(6EA).jpg", badge: "추천" },
+	        { title: "뚜쇼꼬(8EA)", price: "33,000원", img: "./img/desert/뚜쇼꼬(8EA).jpg", badge: "인기" },
+	        { title: "라무르(6EA)", price: "42,000원", img: "./img/desert/라무르(6EA).jpg", badge: "BEST" },
+	        { title: "라피누", price: "29,000원", img: "./img/desert/라피누.jpg", badge: "NEW" },
+	        { title: "랑그 드 샤", price: "20,000원", img: "./img/desert/랑그 드 샤.jpg", badge: "추천" },
+	        { title: "루이즈의 모자(5EA)", price: "29,000원", img: "./img/desert/루이즈의 모자(5EA).jpg", badge: "인기" },
+	        { title: "미니망디앙(8EA)", price: "39,000원", img: "./img/desert/미니망디앙(8EA).jpg", badge: "BEST" },
+	        { title: "복수초·요깡 세트", price: "37,000원", img: "./img/desert/복수초·요깡 세트.jpg", badge: "NEW" },
+	        { title: "빨미에(10EA)", price: "39,000원", img: "./img/desert/빨미에(10EA).jpg", badge: "추천" },
+	        { title: "빨미에(대)(10EA)", price: "37,000원", img: "./img/desert/빨미에(대)(10EA).jpg", badge: "인기" },
+			{ title: "샤블레(4EA)(6EA)", price: "38,000원", img: "./img/desert/샤블레(4EA).jpg", badge: "BEST" },
+	        { title: "쇼꼴라 노아젯트", price: "33,000원", img: "./img/desert/쇼꼴라 노아젯트.jpg", badge: "NEW" },
+	        { title: "시칠리아(6EA)", price: "29,000원", img: "./img/desert/시칠리아(6EA).jpg", badge: "추천" },
+	        { title: "아몬드 쇼꼴라 2종", price: "33,000원", img: "./img/desert/아몬드 쇼꼴라 2종.jpg", badge: "인기" },
+	        { title: "안나마리아", price: "42,000원", img: "./img/desert/안나마리아.jpg", badge: "BEST" },
+	        { title: "에스까르고(10EA)", price: "29,000원", img: "./img/desert/에스까르고(10EA).jpg", badge: "NEW" },
+	        { title: "잣쿠키(6EA)", price: "20,000원", img: "./img/desert/잣쿠키(6EA).jpg", badge: "추천" },
+	        { title: "초코 구운과자 묶음(4+1)", price: "29,000원", img: "./img/desert/초코 구운과자 묶음(4+1).jpg", badge: "인기" },
+	        { title: "초코빨미에(10EA)", price: "39,000원", img: "./img/desert/초코빨미에(10EA).jpg", badge: "BEST" },
+	        { title: "초코쿠키(6EA)", price: "37,000원", img: "./img/desert/초코쿠키(6EA).jpg", badge: "NEW" },
+	        { title: "초코페라", price: "39,000원", img: "./img/desert/초코페라.jpg", badge: "추천" },
+	        { title: "코코넛쿠키(6EA)", price: "37,000원", img: "./img/desert/코코넛쿠키(6EA).jpg", badge: "인기" },	      
+	    ];
 
-        const itemsPerPage = 12; // 페이지당 최대 12개 표시
+
+        const itemsPerPage = 12; 
         let currentPage = 1;
 
         function displayItems(page) {
@@ -402,38 +411,15 @@
             }
         }
 
-        // 로컬 스토리지를 사용하여 장바구니에 상품 추가
-        function addToCart(title, price, img) {
-            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-            const existingItemIndex = cartItems.findIndex(item => item.title === title);
-
-            if (existingItemIndex >= 0) {
-                cartItems[existingItemIndex].quantity += 1;
-            } else {
-                cartItems.push({
-                    title,
-                    price,
-                    img,
-                    quantity: 1
-                });
-            }
-
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-            alert('장바구니에 추가되었습니다!');
-            
-            if (confirm('장바구니로 이동하시겠습니까?')) {
-                window.location.href = 'orderCart.html';  // 장바구니 페이지로 이동
-            }
+        <!-- 장바구니 추가했을때 액션 여기에다가... 모달창을 띄운다?-->
+        function addToCart(title, price) {
+            alert(`장바구니에 추가되었습니다: ${title} - ${price}`);
         }
 
-        // 초기화
+        <!-- 초기화 -->
         document.getElementById('totalItemCount').textContent = items.length;
         displayItems(currentPage);
         setupPagination(items.length);
-
-        
         
         <!-- 상품 페이지단 js -->
         
@@ -486,7 +472,7 @@
         displayItems(currentPage);
         setupPagination(items.length);
 
-        
+
     </script>
 </div>
 </body>
