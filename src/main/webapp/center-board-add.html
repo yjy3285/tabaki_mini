@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>고객센터</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/center.css">
+</head>
+<body>
+    <section class="page-container mb-5" style="max-width: 1200px;">
+        <!-- Breadcrumbs 영역 시작-->
+        <nav class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="helpcenter-board-list.html">고객센터</a></li>
+                <li class="breadcrumb-item active" aria-current="page">기타문의</li>
+            </ol>
+        </nav>
+        <!-- Breadcrumbs 영역 해제-->
+
+        <!-- 메인 컨테이너 -->
+        <div class="list-container">
+            <!-- 서브 네비게이터 시작 -->
+            <div class="d-flex justify-content-center">
+                <h2 class="h2 mb-5 border-bottom" style="width: 100px;">기타문의</h2>
+            </div>
+            <ul class="nav nav-tabs justify-content-center mb-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">공지사항</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">상품문의</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="helpcenter-board-list.html">기타문의</a>
+                </li>
+            </ul>
+            <!-- 서브 네비게이터 종료 -->
+
+            <!-- 게시글 작성 컴포넌트 시작 -->
+            <div class="card my-4">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group d-flex align-items-center">
+                            <div class="form-title">
+                                <label class="control-label" for="memberName"><b>이름</b></label>
+                            </div>
+                            <div class="form-content">
+                                <input class="form-control" id="memberName" type="text" placeholder="엄상식" readonly>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <!-- 기타 문의에선 없애고, 상품문의에는 넣어야 함. 일단 넣어놓음. -->
+                        <!-- 상품 변경, 취소의 경우에는 주문번호를 선택해서 문의할 수 있도록 변경합니다. -->
+                        <div class="form-group d-flex align-items-center">
+                            <div class="form-title">
+                                <label for="content" class="col-form-label"><b>유형</b></label>
+                            </div>
+                            <div class="form-content d-flex flex-grow-1">
+                                <div class="form-start d-flex align-items-center">
+                                    <label for="category">카테고리</label>
+                                    <select class="form-control" id="category">
+                                        <option value="bread">Bread</option>
+                                        <option value="cake">Cake</option>
+                                        <option value="desert">Desert</option>
+                                    </select>
+                                </div>
+                                <div class="form-end d-flex align-items-center">
+                                    <label for="productName">상품이름</label>
+                                    <select class="form-control" id="productName">
+                                        <option value="pid1">옥수수빵</option>
+                                        <option value="pid2">옥수수식빵</option>
+                                        <option value="pid3">생크림빵</option>
+                                        <option value="pid4">단팥빵</option>
+                                        <option value="pid5">메론빵</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <div class="form-group d-flex">
+                            <div class="form-title d-flex align-items-center">
+                                <label for="title" style="margin: 0;"><b>제목</b></label>
+                            </div>
+                            <div class="form-content d-flex flex-column flex-grow-1">
+                                <div class="form-start" style="width: 75%">
+                                    <input type="text" class="form-control" id="title">
+                                </div>
+                                <div class="form-end d-flex justify-content-start mt-1" style="width: 40%">
+                                    <!--
+                                    <div class="custom-control custom-checkbox flex-grow-1">
+                                        <input type="checkbox" class="custom-control-input" id="confirmHTML" checked>
+                                        <label class="custom-control-label" for="confirmHTML" style="width:auto;">
+                                            <small class="form-text text-muted">HTML태그 허용</small>
+                                        </label>
+                                    </div>
+                                    -->
+                                    <div class="custom-control custom-checkbox flex-grow-1">
+                                        <input type="checkbox" class="custom-control-input" id="secretBorad" checked>
+                                        <label class="custom-control-label" for="secretBorad" style="width:auto;">
+                                            <small class="form-text text-muted">게시글 비공개 여부</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <!-- 게시글 텍스트에리어 영역. smarteditor2 사용해서 끌어오려다가 잘 안됨. -->
+                        <div class="form-group d-flex">
+                            <div class="form-title d-flex align-items-center">
+                                <label for="content" style="margin: 0;"><b>내용</b></label>
+                            </div>
+                            <div class="form-content" style="width: 56%">
+                                <textarea class="form-control" id="content" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <div class="form-group d-flex">
+                            <div class="form-title d-flex align-items-center">
+                                <label for="attachment" style="margin: 0;"><b>첨부</b></label>
+                            </div>
+                            <div class="form-content">
+                                <input type="file" class="form-control-file" id="attachment">
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <div class="form-group d-flex justify-content-end">
+                            <button type="submit" class="btn btn-secondary mr-1">등록하기</button>
+                            <a class="btn btn-secondary buttonAnchor" href="helpcenter-board-list.html">목록보기</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 게시글 작성 컴포넌트 종료 -->
+        </div>
+    </section>
+
+    <script>
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "content",
+            sSkinURI: "https://cdnjs.cloudflare.com/ajax/libs/smarteditor2/2.0.0/SmartEditor2Skin.html",
+            fCreator: "createSEditor2"
+        });
+
+        function submitContents(elClickedObj) {
+            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+            try {
+                elClickedObj.form.submit();
+            } catch (e) {}
+        }
+    </script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smarteditor2/2.0.0/js/HuskyEZCreator.js"></script>
+</body>
+</html>

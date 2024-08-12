@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 - 상품등록</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- 사이드바 시작 -->
+            <aside class="sidebar">
+                <h3>관리자</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">관리자메인</a></li>
+                </ul>
+                <hr class="hr"/>
+                <h3>상품관리</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#">상품등록</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
+                </ul>
+                <hr class="hr"/>
+                <h3>고객센터</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">상품문의</a></li>
+                </ul>
+            </aside>
+            <!-- 사이드바 종료 -->
+            <!-- 메인 섹션 시작 -->
+            <section class="content">
+                <h2>상품 등록</h2>
+                <hr class="hr">
+                <div class="d-flex form-wrapper my-4">
+                    <form action="#">
+                        <div class="product-container">
+                            <div class="block-left flex-grow-1">
+                                <!-- 상품 이름 -->
+                                <div class="form-group">
+                                    <label for="product-name"><b>상품명</b></label>
+                                    <input type="text" class="form-control" id="product-name" aria-describedby="productName" placeholder="상품 이름 입력">
+                                </div>
+                                <!-- 상품 상세 -->
+                                <div class="form-group">
+                                    <label for="product-details"><b>상품상세</b></label>
+                                    <textarea class="form-control" id="product-details" rows="5"></textarea>
+                                    <input type="file" class="form-control-file mt-1" id="product-details-imagefile" aria-describedby="details-imagefile">
+                                </div>
+                                <!-- 카테고리 선택 -->
+                                <div class="form-group">
+                                    <label for="product-category"><b>카테고리</b></label>
+                                    <select class="form-control form-select" id="product-category">
+                                      <option selected>카테고리 선택</option>
+                                      <option value="bread">Bread</option>
+                                      <option value="cake">Cake</option>
+                                      <option value="desert">Desert</option>
+                                    </select>
+                                </div>
+                                <!-- 상품가격 / 상품 수량-->
+                                <div class="d-flex justify-content-between" style="width: 95%;">
+                                    <div class="form-group">
+                                        <label for="product-price"><b>상품가격</b></label>
+                                        <input type="number" class="form-control" id="product-price" aria-describedby="productPrice" placeholder="상품 가격">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-amount"><b>상품수량</b></label>
+                                        <input type="number" class="form-control" id="product-amount" aria-describedby="productAmount" placeholder="수량 설정">
+                                    </div>
+                                </div>
+                                <!-- 배송업체 / 배송비용 -->
+                                <div class="d-flex justify-content-between" style="width: 95%;">
+                                    <div class="form-group flex-sort">
+                                        <label for="delivery-company"><b>배송업체</b></label>
+                                        <select class="form-control form-select" id="delivery-company">
+                                          <option selected>배송업체 선택</option>
+                                          <option value="1">대한통운</option>
+                                          <option value="2">한진택배</option>
+                                          <option value="3">롯데택배</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group flex-sort">
+                                        <label for="delivery-price"><b>배송가격</b></label>
+                                        <input type="number" class="form-control" id="delivery-price" aria-describedby="deliveryPrice" placeholder="배송 가격">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 우측 영역 -->
+                            <div class="block-right flex-grow-1">
+                                <!-- 상품 이미지 -->
+                                <div class="form-group text-center">
+                                    <div class="text-left ml-5">
+                                      <label for="product-main-imagefile"><b>상품 이미지</b></label>
+                                    </div>
+                                    <img src="img/왕슈크림도넛.jpg" class="rounded" id="product-main-image" width="300px" height="275px"/>
+                                    <div class="input-group input-center text-left mt-2 mb-3">
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="product-main-imagefile">
+                                          <label class="custom-file-label" for="product-main-imagefile">상품 이미지 업로드</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 상품 상태 및 추천 설정 -->
+                                <label for="product-status"><b>상품상태 설정</b></label>
+                                <div class="form-group d-flex justify-content-between" style="width: 95%;">
+                                    <div class="flex-sort">
+                                        <select class="form-control form-select" id="product-status">
+                                          <option selected>상품상태</option>
+                                          <option value="1">판매중</option>
+                                          <option value="2">상품품절</option>
+                                          <option value="3">판매중단</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex-sort d-flex justify-content-center align-items-center checkbox-area">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="recommended-product" value="recommendedProd" checked="">
+                                            <label class="custom-control-label" for="recommended-product"><b>추천상품 설정</b></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="hr">
+                        
+                        <div class="d-flex justify-content-end">
+                            <button type="reset" class="btn btn-secondary mr-1">비우기</button>
+                            <button type="submit" class="btn btn-secondary">등록하기</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- 메인 섹션 종료 -->
+        </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
