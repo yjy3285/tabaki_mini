@@ -1,0 +1,25 @@
+.banner img {
+    width: 100%;
+}
+
+
+
+.intro  {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.item_elem {
+    background-color: #fff;
+    border: white !important;;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(25% - 30px); /* 4개씩 배치되도록 설정 */
+    box-shadow: white !important;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
