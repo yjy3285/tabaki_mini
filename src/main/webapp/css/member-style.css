@@ -1,0 +1,133 @@
+/* member-style.css */
+
+/* 전체 페이지의 폰트 설정 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+/* 페이지 기본 스타일 */
+body {
+    font-family: 'Pretendard-Regular','Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 컨테이너 크기와 배경 설정 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 빵크럼 스타일 */
+nav.breadcrumb {
+    background-color: white;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+}
+
+nav.breadcrumb a {
+    color: #333;
+}
+
+/* 회원가입 섹션 제목 스타일 */
+.signup-section h1 {
+    text-align: center;
+}
+
+/* 회원정보 입력 헤더 스타일 */
+.signup-header {
+    margin-left: 130px;
+    margin-bottom: 20px;
+}
+
+.signup-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.signup-header p {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+/* 테이블 스타일 */
+table {
+    width: 100%;
+}
+
+table td {
+    vertical-align: middle;
+}
+
+table td:first-child {
+    width: 30%;
+}
+
+/* 입력 필드 크기 설정 */
+.input-small {
+    width: 300px !important;
+}
+
+.input-medium {
+    width: 600px !important;
+}
+
+.input-small-postcode {
+    width: 200px !important;
+}
+
+.input-tiny {
+    width: 100px !important;
+}
+
+/* 생일/성별 입력 필드 스타일 */
+.birthday-row {
+    margin-bottom: 10px;
+}
+
+.birthday-row select,
+.birthday-row .form-check {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.birthday-row h6 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+/* 추가 주소 입력 필드 스타일 */
+.input-group .form-control {
+    flex: 0 0 auto !important;
+}
+
+/* 여백 조정 */
+.birthday-gender-row .form-check {
+    margin-right: 20px;
+}
+
+.birthday-gender-row h6 {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.birthday-gender-row select {
+    margin-right: 10px;
+}

@@ -43,6 +43,11 @@ section {
 .table tbody td a {
     font-size: 12pt;
     color: black;
+    display: block;     /* a 태그를 블록 요소로 변환 */
+    width: 100%;        /* 부모 요소(td)의 전체 너비를 차지하도록 설정 */
+}
+.table tbody td a:hover {
+    text-decoration: none;
 }
 
 .badge {
@@ -127,13 +132,13 @@ h2.border-bottom {
 
 .form-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     width: auto;
     border-radius: 3px;
 }
 
 .form-container form {
-    width: 750px;
+    width: 1200px;
 }
 
 .form-input-wrapper input {
@@ -164,8 +169,14 @@ h2.border-bottom {
     margin-bottom: 0;
 }
 
-
-
 .form-content select {
     width: 50%;
+}
+.btn-light.disabled {
+    background-color: #fff;
+    border-color: #fff;
+}
+.btn-submit {
+    width: 75px;
+    height: 75px;
 }

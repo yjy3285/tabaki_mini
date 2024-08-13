@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 - 메인</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -15,19 +15,19 @@
             <aside class="sidebar">
                 <h3>관리자</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link active" href="#">관리자메인</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="admin-main.html">관리자메인</a></li>
                 </ul>
                 <hr class="hr"/>
                 <h3>상품관리</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">상품등록</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin-product-details.html">상품등록</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
                 </ul>
                 <hr class="hr"/>
                 <h3>고객센터</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">상품문의</a></li>
+                    <li class="nav-item"><a class="nav-link" href="center-board-list.html">공지사항</a></li>
+                    <li class="nav-item"><a class="nav-link" href="center-board-list.html">상품문의</a></li>
                 </ul>
             </aside>
             <!-- 사이드바 종료 -->
@@ -41,11 +41,11 @@
                     </div>
                     <div class="flex-fill text-center">
                         <p>총 상품 갯수</p>
-                        <p>xx 개</p>
+                        <p><strong>10</strong> 개</p>
                     </div>
                     <div class="flex-fill text-center">
                         <p>총 주문 갯수</p>
-                        <p>xx 개</p>
+                        <p><strong>4</strong> 개</p>
                     </div>
                 </div>
                 <hr class="hr my-4"/>
@@ -53,26 +53,32 @@
                     <div class="d-flex justify-content-between mb-2 align-items-center">
                         <h3>상품 목록 리스트</h3>
                         <form class="form-inline my-2 my-lg-0">
-                            <select class="form-control mr-sm-1" id="searchSelect">
-                                <option selected>검색조건</option>
-                                <option value="pname">이름</option>
-                                <option value="category">분류</option>
-                                <option value="pstatus">상태</option>
-                            </select>
-                            <input class="form-control mr-sm-0" type="text" placeholder="Search">
-                            <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
+                            <div class="input-group">
+                                <select class="form-control mr-sm-1" id="searchProductSelect">
+                                    <option selected>검색조건</option>
+                                    <option value="pname">이름</option>
+                                    <option value="category">분류</option>
+                                    <option value="pstatus">상태</option>
+                                </select>
+                                <input class="form-control mr-sm-0" type="text" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div class="table-wrapper">
                         <table class="table table-hover table-striped">
                             <thead class="thead-fixed">
                                 <tr class="table-secondary text-center">
+                                    <!-- 상품 전체 토글 -->
                                     <th style="width: 30px" class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="total-product-select">
-                                            <label class="custom-control-label" for="total-product-select"></label>
+                                            <input type="checkbox" class="custom-control-input" id="totalProductSelect">
+                                            <label class="custom-control-label" for="totalProductSelect"></label>
                                         </div>
                                     </th>
+                                    <!-- 토글 종료 -->
                                     <th style="width: 30px;">NO.</th>
                                     <th style="width: 50px;">분류</th>
                                     <th>이미지</th>
@@ -91,7 +97,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-1">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-1">
                                             <label class="custom-control-label" for="product-select-1"></label>
                                         </div>
                                     </td>
@@ -104,7 +110,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -115,7 +121,7 @@
                                     </td>
                                     <!-- 상품수정 -->
                                     <td class="align-middle">
-                                        <a href="#"><i class="fas fa-pen"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
                                     </td>
                                     <!-- 상품삭제 -->
                                     <td class="align-middle">
@@ -128,7 +134,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-2">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-2">
                                             <label class="custom-control-label" for="product-select-2"></label>
                                         </div>
                                     </td>
@@ -141,7 +147,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -165,7 +171,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-3">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-3">
                                             <label class="custom-control-label" for="product-select-3"></label>
                                         </div>
                                     </td>
@@ -178,7 +184,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -202,7 +208,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-4">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-4">
                                             <label class="custom-control-label" for="product-select-4"></label>
                                         </div>
                                     </td>
@@ -215,7 +221,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -239,7 +245,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-5">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-5">
                                             <label class="custom-control-label" for="product-select-5"></label>
                                         </div>
                                     </td>
@@ -252,7 +258,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -276,7 +282,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-6">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-6">
                                             <label class="custom-control-label" for="product-select-6"></label>
                                         </div>
                                     </td>
@@ -289,7 +295,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -313,7 +319,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-7">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-7">
                                             <label class="custom-control-label" for="product-select-7"></label>
                                         </div>
                                     </td>
@@ -326,7 +332,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -350,7 +356,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-8">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-8">
                                             <label class="custom-control-label" for="product-select-8"></label>
                                         </div>
                                     </td>
@@ -363,7 +369,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -387,7 +393,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-9">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-9">
                                             <label class="custom-control-label" for="product-select-9"></label>
                                         </div>
                                     </td>
@@ -400,7 +406,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -424,7 +430,7 @@
                                     <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
                                     <td class="align-middle">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="product-select-10">
+                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-10">
                                             <label class="custom-control-label" for="product-select-10"></label>
                                         </div>
                                     </td>
@@ -437,7 +443,7 @@
                                         <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
                                     </td>
                                     <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#">왕슈크림도넛</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
                                     <!-- 상품가격 -->
                                     <td class="align-middle">3,500원</td>
                                     <!-- 재고수량 -->
@@ -497,14 +503,18 @@
                     <div class="d-flex justify-content-between mb-2 align-items-center">
                         <h3>주문 목록 리스트</h3>
                         <form class="form-inline my-2 my-lg-0">
-                            <select class="form-control mr-sm-1" id="searchSelect">
-                                <option selected>검색조건</option>
-                                <option value="orderProd">주문상품</option>
-                                <option vlaue="orderId">주문번호</option>
-                                <option value="orderStatus">배송상태</option>
-                            </select>
-                            <input class="form-control mr-sm-0" type="text" placeholder="Search">
-                            <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
+                            <div class="input-group">
+                                <select class="form-control mr-sm-1" id="searchOrderSelect">
+                                    <option selected>검색조건</option>
+                                    <option value="orderProd">주문상품</option>
+                                    <option value="orderId">주문번호</option>
+                                    <option value="orderStatus">배송상태</option>
+                                </select>
+                                <input class="form-control mr-sm-0" type="text" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
 
@@ -665,12 +675,195 @@
 
             </section>
             <!-- 메인 섹션 종료 -->
+            <!-- 상품 상세 호출 모달 시작 -->
+            <div class="modal fade" id="productDetailsModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h3 class="modal-title">상품 상세</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="product-container">
+                                <div class="block-left flex-grow-1">
+                                    <div class="form-group flex-column">
+                                        <label for="productName"><b>상품명</b></label>
+                                        <input type="text" class="form-control" id="productName" value="왕슈크림도넛" disabled />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="productDetails"><b>상품상세</b></label>
+                                        <textarea class="form-control" id="productDetails" rows="5" readonly>슈크림이 진득하게 들어 있어 맛과 향이 진하게 배어 들어 있는 큼지막한 도넛 슈크림 빵입니다.</textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="detailsCategory"><b>카테고리</b></label>
+                                        <input type="text" class="form-control" id="detailsCategory" value="디저트" disabled />
+                                    </div>
+
+                                    <div class="d-flex justify-content-between" style="width: 95%;">
+                                        <div class="form-group">
+                                            <label for="productPrice"><b>상품가격</b></label>
+                                            <input type="number" class="form-control" id="productPrice" value="3500" readonly />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="productAmount"><b>상품수량</b></label>
+                                            <input type="number" class="form-control" id="productAmount" value="22" readonly />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between" style="width: 95%;">
+                                        <div class="form-group">
+                                            <label for="deliveryCompany"><b>배송업체</b></label>
+                                            <input type="text" class="form-control" id="deliveryCompany" value="대한통운" disabled />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="deliveryPrice"><b>배송가격</b></label>
+                                            <input type="number" class="form-control" id="deliveryPrice" value="3000" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="block-right flex-grow-1">
+                                    <div class="form-group">
+                                        <div class="text-left">
+                                          <label for="productImagefile"><b>상품 이미지</b></label>
+                                        </div>
+                                        <img src="img/왕슈크림도넛.jpg" class="rounded" id="productImagefile" width="300px" height="275px"/>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between" style="width: 95%;">
+                                        <div class="form-group">
+                                            <label for="productState"><b>상품상태</b></label>
+                                            <input type="text" class="form-control" id="productState" value="판매중" readonly />
+                                        </div>
+                                        <div class="flex-sort d-flex justify-content-center align-items-center">
+                                            <div class="custom-control custom-switch mt-2">
+                                                <input type="checkbox" class="custom-control-input" id="recommendedProduct" disabled />
+                                                <label class="custom-control-label" for="recommendedProduct"><b>추천상품 설정</b></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 상품 상세 호출 모달 끝 -->
+            <!-- 상품 수정 호출 모달 시작 -->
+            <div class="modal fade" id="productUpdateModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h3 class="modal-title">상품 수정</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="#">
+                                <div class="product-container">
+                                    <div class="block-left flex-grow-1">
+                                        <div class="form-group flex-column">
+                                            <label for="updateName"><b>상품명</b></label>
+                                            <input type="text" class="form-control" id="updateName" value="왕슈크림도넛" />
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="updateDetails"><b>상품상세</b></label>
+                                            <textarea class="form-control" id="updateDetails" rows="5">슈크림이 진득하게 들어 있어 맛과 향이 진하게 배어 들어 있는 큼지막한 도넛 슈크림 빵입니다.</textarea>
+                                            <input type="file" class="form-control-file mt-1" id="updateDetailsImage">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="updateCategory"><b>카테고리</b></label>
+                                            <select class="form-control form-select" id="updateCategory" style="width: 90%">
+                                                <option value="bread">Bread</option>
+                                                <option value="cake">Cake</option>
+                                                <option value="desert" selected>Desert</option>
+                                            </select>
+                                        </div>
+    
+                                        <div class="d-flex justify-content-between" style="width: 95%;">
+                                            <div class="form-group">
+                                                <label for="updatePrice"><b>상품가격</b></label>
+                                                <input type="number" class="form-control" id="updatePrice" value="3500" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="updateAmount"><b>상품수량</b></label>
+                                                <input type="number" class="form-control" id="updateAmount" value="22" />
+                                            </div>
+                                        </div>
+    
+                                        <div class="d-flex justify-content-between" style="width: 95%;">
+                                            <div class="form-group w-50">
+                                                <label for="updateDeliveryCompany"><b>배송업체</b></label>
+                                                <select class="form-control form-select" id="updateDeliveryCompany" style="width: 90%;">
+                                                    <option value="1" selected>대한통운</option>
+                                                    <option value="2">한진택배</option>
+                                                    <option value="3">롯데택배</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group w-50">
+                                                <label for="updateDeliveryPrice"><b>배송가격</b></label>
+                                                <input type="number" class="form-control" id="updateDeliveryPrice" value="3000">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="block-right flex-grow-1">
+                                        <div class="form-group">
+                                            <div class="text-left">
+                                              <label for="updateProductImagefile"><b>상품 이미지</b></label>
+                                            </div>
+                                            <img src="img/왕슈크림도넛.jpg" class="rounded" id="updateProductImagefile" width="300px" height="275px"/>
+                                            <input type="file" class="form-control-file mt-1" id="updateImagefileUpload">
+                                        </div>
+    
+                                        <div class="d-flex justify-content-between" style="width: 95%;">
+                                            <div class="form-group">
+                                                <label for="updateProductState"><b>상품상태</b></label>
+                                                <select class="form-control form-select" id="updateProductState">
+                                                    <option value="1" selected>판매중</option>
+                                                    <option value="2">판매중단</option>
+                                                    <option value="3">매진</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex-sort d-flex justify-content-center align-items-center">
+                                                <div class="custom-control custom-switch mt-2">
+                                                    <input type="checkbox" class="custom-control-input" id="updateRecommendedProduct" />
+                                                    <label class="custom-control-label" for="updateRecommendedProduct"><b>추천상품 설정</b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end ml-3 mt-5" style="width: 95%;">
+                                            <button type="submit" class="btn btn-secondary" id="updateSubmit">수정하기</button>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 모달 끝 -->
         </div>
     </div>
    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>
 
