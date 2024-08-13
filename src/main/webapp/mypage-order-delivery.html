@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/mypage-order-delivery.css">
+    <link rel="stylesheet" href="css/mypage.css">
     
     <title>mypage-order-delivery</title>
     </head>
@@ -31,18 +31,18 @@
 						<div class="collapse navbar-collapse" id="navbarColor03">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
-									<a class="nav-link" href="#">메인
+									<a class="nav-link" href="index.html">메인
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">로그인</a>
+									<a class="nav-link" href="login.html">로그인</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="#">회원가입</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">마이페이지</a>
+									<a class="nav-link" href="mypage-main.html">마이페이지</a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
@@ -73,9 +73,9 @@
 								<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
 							</button>
 							<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-								<a class="dropdown-item py-2" href="#"><i class="fa fa-bread-slice"></i> :: 빵</a>
-								<a class="dropdown-item py-2" href="#"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
-								<a class="dropdown-item py-2" href="#"><i class="fa fa-cookie"></i> :: 디저트</a>
+								<a class="dropdown-item py-2" href="itemList_bread.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
+								<a class="dropdown-item py-2" href="itemList_cake.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
+								<a class="dropdown-item py-2" href="itemList_desert.html"><i class="fa fa-cookie"></i> :: 디저트</a>
 							</div>
 						</div><!--
 						<a href="#">"카테고리버튼"</a>
@@ -89,13 +89,13 @@
 					<div class="top-menu collapse navbar-collapse" id="navbarColor03">
 						<ul class="navbar-nav mr-auto header-font-size ">
 							<li class="nav-item">
-								<a class="nav-link" href="#">베스트</a>
+								<a class="nav-link" href="itemList_best.html">베스트</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">신상품</a>
+								<a class="nav-link" href="itemList_new.html">신상품</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">추천상품</a>
+								<a class="nav-link" href="itemList_recommend.html">추천상품</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">공지사항</a>
@@ -113,7 +113,7 @@
 							</div>
 						</div>
 						<div class="top-cart">
-							<a href="#"><i class="fas fa-shopping-cart icon-size"></i></a>
+							<a href="orderCart.html"><i class="fas fa-shopping-cart icon-size"></i></a>
 							<span class="cart-count">3</span>
 						</div>
 					</div>
@@ -122,34 +122,45 @@
 		</div>
 	</header>
 	<!-- 사이드바 부분입니다. -->
+	<hr>
 	<div class="container">
+	<nav class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">마이페이지</a></li>
+                <li class="breadcrumb-item"><a href="#">주문내역</a></li>
+                
+            </ol>
+        </nav>
         <div class="main-content">
             <aside class="sidebar">
                 <h3>쇼핑정보</h3>
-                <ul>
-                    <li><a href="../webapp/mypage-order-delivery.html">주문배송현황</a></li>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a class="nav-link" href="mypage-order-delivery.html">주문배송현황</a></li>
                                  
                 </ul>
+                <hr class="hr"/>
                 
                 <h3>활동정보</h3>
-                <ul>
+                <ul class="nav nav-pills flex-column">
                     
-                    <li><a href="#">장바구니</a></li>                 
-                    <li><a href="../webapp/mypage_review.html">나의 상품 후기</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orderCart.html">장바구니</a></li>                 
+                    <li class="nav-item"><a class="nav-link" href="mypage-review.html">나의 상품 후기</a></li>
                 </ul>
+                <hr class="hr"/>
                 <h3>개인정보</h3>
-                <ul>
-                    <li><a href="../webapp/mypage_edit member's info.html">회원정보수정</a></li>
-                    <li><a href="#">회원탈퇴</a></li>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a class="nav-link" href="member-edit.html">회원정보수정</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">회원탈퇴</a></li>
                 </ul>
             </aside>
             <!-- content부분입니다. -->
                        <section class="content">
                  <h2>주문내역</h2>
-                <div class="order-summary">
-                    <p><span>XXX</span>님이 쇼핑몰에서 주문한 내역입니다.</p>
+                <div class="orderdelivery-summary">
+                    <p><span>황망고</span>님이 쇼핑몰에서 주문한 내역입니다.</p>
                 </div>
-                <div class="order-filter">
+                <div class="orderdelivery-filter">
                     <button type="button" class="btn btn-danger">오늘</button>
                     <button type="button" class="btn btn-danger">어제</button>
                     <button type="button" class="btn btn-danger">일주일</button>
@@ -157,12 +168,12 @@
                     <button type="button" class="btn btn-danger">3개월</button>
                     <button type="button" class="btn btn-danger">1년</button>
                 </div>
-                <div class="order-search">
-                    <input type="date" value="2024-07-28">
-                    <input type="date" value="2024-08-04">
-                    <button type="button" class="btn btn-danger">조회하기</button>
+                <div class="orderdelivery-search">
+                    <input type="date" value="2024-08-06">
+                    <input type="date" value="2024-08-13">
+                    <button type="button" class="btn btn-danger">조회</button>
                 </div>
-                <table class="order-table">
+                <table class="orderdelivery-table">
                     <thead>
                         <tr>
                             <th>주문일자</th>
@@ -174,16 +185,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>2024-08-04</td>
-                            <td>갈릭크림치즈베이글 외 3종</td>
-                            <td>38,400원</td>
-                            <td>배송완료</td>
-                            <td><button type="button" class="btn btn-danger">조회</button></td>
+                            <td>2024-08-13</td>
+                            <td>자연효모빵 외 1종</td>
+                            <td>31,200원</td>
+                            <td>배송중</td>
+                            <td> <a href="mypage-orderDetail.html"><button type="button" class="btn btn-danger">조회</button></a></td>
                         </tr>
                     </tbody>
                 </table>
                 <br><br><br>
-                <div class="order-notice">
+                <div class="orderdelivery-notice">
                     <p>주문상세의 조회 버튼을 클릭하시면, 주문상세 내역을 확인하실 수 있습니다.</p>
                     
                 </div>
@@ -193,7 +204,7 @@
 	
 	<!-- content 부분 끝입니다. -->
 	<footer>
-    	<hr class="hr">
+    	<br>
         <div class="footer-container d-flex justify-content-center align-items-center">
             <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px">
             <div>
