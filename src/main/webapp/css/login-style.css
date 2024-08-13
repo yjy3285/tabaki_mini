@@ -1,0 +1,114 @@
+/* login-style.css */
+
+/* 전체 페이지의 폰트 설정 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+/* 페이지 기본 스타일 */
+body {
+    font-family: 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 컨테이너 크기와 배경 설정 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 빵크럼 스타일 */
+nav.breadcrumb {
+    background-color: white;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+}
+
+nav.breadcrumb a {
+    color: #333;
+}
+
+/* 로그인 섹션 제목 스타일 */
+.login-section h1 {
+    margin-bottom: 10px;
+}
+
+.login-section h3 {
+    margin-bottom: 20px;
+}
+
+/* 로그인 폼 입력 필드 스타일 */
+form .form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+    width: 500px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+/* 링크 스타일 */
+.links a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* 회원가입 섹션 스타일 */
+.signup-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 회원가입 텍스트 스타일 */
+.signup-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.signup-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button button {
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 50px;
+}
+
+.signup-button button:hover {
+    background-color: #555;
+}
