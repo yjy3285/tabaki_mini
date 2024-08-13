@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 - 상품등록</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -15,19 +15,19 @@
             <aside class="sidebar">
                 <h3>관리자</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">관리자메인</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin-main.html">관리자메인</a></li>
                 </ul>
                 <hr class="hr"/>
                 <h3>상품관리</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link active" href="#">상품등록</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="admin-product-details.html">상품등록</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
                 </ul>
                 <hr class="hr"/>
                 <h3>고객센터</h3>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">상품문의</a></li>
+                    <li class="nav-item"><a class="nav-link" href="center-board-list.html">공지사항</a></li>
+                    <li class="nav-item"><a class="nav-link" href="center-board-list.html">상품문의</a></li>
                 </ul>
             </aside>
             <!-- 사이드바 종료 -->
@@ -94,21 +94,21 @@
                                 <!-- 상품 이미지 -->
                                 <div class="form-group text-center">
                                     <div class="text-left ml-5">
-                                      <label for="product-main-imagefile"><b>상품 이미지</b></label>
+                                      <label for="productMainImage"><b>상품 이미지</b></label>
                                     </div>
-                                    <img src="img/왕슈크림도넛.jpg" class="rounded" id="product-main-image" width="300px" height="275px"/>
+                                    <img src="img/왕슈크림도넛.jpg" class="rounded" id="productMainImage" width="300px" height="275px"/>
                                     <div class="input-group input-center text-left mt-2 mb-3">
                                         <div class="custom-file">
-                                          <input type="file" class="custom-file-input" id="product-main-imagefile">
-                                          <label class="custom-file-label" for="product-main-imagefile">상품 이미지 업로드</label>
+                                          <input type="file" class="custom-file-input" id="productMainImagefile">
+                                          <label class="custom-file-label" for="productMainImagefile">상품 이미지 업로드</label>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- 상품 상태 및 추천 설정 -->
-                                <label for="product-status"><b>상품상태 설정</b></label>
+                                <label for="productState"><b>상품상태 설정</b></label>
                                 <div class="form-group d-flex justify-content-between" style="width: 95%;">
                                     <div class="flex-sort">
-                                        <select class="form-control form-select" id="product-status">
+                                        <select class="form-control form-select" id="productState">
                                           <option selected>상품상태</option>
                                           <option value="1">판매중</option>
                                           <option value="2">상품품절</option>
@@ -117,8 +117,8 @@
                                     </div>
                                     <div class="flex-sort d-flex justify-content-center align-items-center checkbox-area">
                                         <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="recommended-product" value="recommendedProd" checked="">
-                                            <label class="custom-control-label" for="recommended-product"><b>추천상품 설정</b></label>
+                                            <input type="checkbox" class="custom-control-input" id="recommendedProduct" value="recommendedProd" checked>
+                                            <label class="custom-control-label" for="recommendedProduct"><b>추천상품 설정</b></label>
                                         </div>
                                     </div>
                                 </div>
@@ -141,6 +141,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>
 

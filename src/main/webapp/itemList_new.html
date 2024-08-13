@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/center.css"><meta charset="UTF-8">
-<title>디저트</title>
+    <link rel="stylesheet" href="css/center.css">
+</head>
 <style>
     body {
         background-color: #f9f9f9;
@@ -250,10 +250,10 @@
         justify-content: center;
     }
 </style>
-</head>
 <body>
 <div id="wrap">
     <!-- 헤더 자리 -->
+   
     
     <!-- 상품 목록 페이지 시작 -->
     <div id="contentWrapper">
@@ -262,28 +262,22 @@
 	<nav class="breadcrumb-container">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-			<li class="breadcrumb-item"><a href="#">디저트</a></li>
+			<li class="breadcrumb-item"><a href="#">NEW</a></li>
 		</ol>
 	</nav>
-	
+   
         <!-- 상품 목록 내용 -->
         <div id="contentWrap">
-            <!-- 지역 선택 분류 상단 메뉴 -->
-            <div id="top_category">
-                <ul>
-                    <li class="btn btn-danger"><a href="itemList_bread.html">빵</a></li>
-                    <li class="btn btn-danger"><a href="itemList_cake.html">케이크</a></li>
-                    <li class="btn btn-danger"><a href="itemList_desert.html">디저트</a></li>
-                </ul>
-            </div>
+
             <!-- 상품 목록 하단 시작 -->
             <!-- 상품 목록 안내단 -->
             <div class="item_info">
                 <div class="item_total">
                     총 
                     <b id="totalItemCount"></b>
-                    개의 상품이 있습니다
+                    개의 상품이 있습니다.
                 </div>
+                
             </div>
             <!-- 상품 목록 표시단 -->
             <div class="item_wrap" id="itemWrap">
@@ -298,11 +292,39 @@
         </div>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
     <script>
 	    const items = [
+	        { title: "걀렛뜨 데로와 푀유떼", price: "9,800원", img: "./img/bread/걀렛뜨 데로와 푀유떼.jpg", badge: "BEST" },
+	        { title: "그리오틴 케익(6EA)", price: "14,800원", img: "./img/bread/그리오틴 케익(6EA).jpg", badge: "NEW" },
+	        { title: "되리브르(대)", price: "15,000원", img: "./img/bread/되리브르(대).jpg", badge: "추천" },
+	        { title: "땅드레스 아로랑쥬(6EA)", price: "14,800원", img: "./img/bread/땅드레스 아로랑쥬(6EA).jpg"},
+	        { title: "로데브", price: "4,500원", img: "./img/bread/로데브.jpg", badge: "BEST" },
+	        { title: "르뱅 꾸뻬", price: "3,800원", img: "./img/bread/르뱅 꾸뻬.jpg", badge: "NEW" },
+	        { title: "마블케익", price: "20,000원", img: "./img/bread/마블케익.jpg", badge: "추천" },
+	        { title: "바따르", price: "4,200원", img: "./img/bread/바따르.jpg" },
+	        { title: "빠리지앵", price: "5,900원", img: "./img/bread/빠리지앵.jpg", badge: "BEST" },
+	        { title: "뺑드미", price: "4,900원", img: "./img/bread/뺑드미.jpg", badge: "NEW" },
+	        { title: "세글 누아레쟁", price: "4,000원", img: "./img/bread/세글 누아레쟁.jpg", badge: "추천" },
+	        { title: "오렌지 케익", price: "22,000원", img: "./img/bread/오렌지케익.jpg"},
+	        { title: "유산균 발효 식빵", price: "4,000원", img: "./img/bread/유산균 발효 식빵.jpg", badge: "BEST" },
+	        { title: "이탈리안 레몬케익", price: "21,000원", img: "./img/bread/이탈리안 레몬케익.jpg", badge: "NEW" },
+	        { title: "잉글리쉬 파운드", price: "19,000원", img: "./img/bread/잉글리쉬 파운드.jpg", badge: "추천" },
+	        { title: "자연효모빵", price: "4,600원", img: "./img/bread/자연효모빵.jpg" },
+	        { title: "갸또 쇼꼴라", price: "38,000원", img: "./img/cake/갸또 쇼꼴라.jpg", badge: "BEST" },
+	        { title: "고구마 생크림 케익", price: "33,000원", img: "./img/cake/고구마 생크림 케익.jpg", badge: "NEW" },
+	        { title: "까망베르 치즈케익", price: "29,000원", img: "./img/cake/까망베르 치즈케익.jpg", badge: "추천" },
+	        { title: "바닐라 생크림 케익", price: "33,000원", img: "./img/cake/바닐라 생크림 케익.jpg" },
+	        { title: "샤를로뜨", price: "42,000원", img: "./img/cake/샤를로뜨.jpg", badge: "BEST" },
+	        { title: "쉭쎄", price: "29,000원", img: "./img/cake/쉭쎄.jpg", badge: "NEW" },
+	        { title: "스위스롤 & 말차롤케익", price: "20,000원", img: "./img/cake/스위스롤 & 말차롤케익.jpg", badge: "추천" },
+	        { title: "티라미수", price: "29,000원", img: "./img/cake/티라미수.jpg" },
+	        { title: "파인치즈 케익", price: "39,000원", img: "./img/cake/파인치즈 케익.jpg", badge: "BEST" },
+	        { title: "프레지에 에큠", price: "37,000원", img: "./img/cake/프레지에 에큠.jpg", badge: "NEW" },
+	        { title: "프레지에", price: "39,000원", img: "./img/cake/프레지에.jpg", badge: "추천" },
+	        { title: "후랑보아즈", price: "37,000원", img: "./img/cake/후랑보아즈.jpg" },
 	        { title: "그리스넛(6EA)", price: "38,000원", img: "./img/desert/그리스넛(6EA).jpg", badge: "BEST" },
 	        { title: "꼬끼유(12EA)", price: "33,000원", img: "./img/desert/꼬끼유(12EA).jpg", badge: "NEW" },
 	        { title: "노아(6EA)", price: "29,000원", img: "./img/desert/노아(6EA).jpg", badge: "추천" },
@@ -315,7 +337,7 @@
 	        { title: "복수초·요깡 세트", price: "37,000원", img: "./img/desert/복수초·요깡 세트.jpg", badge: "NEW" },
 	        { title: "빨미에(10EA)", price: "39,000원", img: "./img/desert/빨미에(10EA).jpg", badge: "추천" },
 	        { title: "빨미에(대)(10EA)", price: "37,000원", img: "./img/desert/빨미에(대)(10EA).jpg" },
-			{ title: "샤블레(4EA)(6EA)", price: "38,000원", img: "./img/desert/샤블레(4EA).jpg", badge: "BEST" },
+	        { title: "샤블레(4EA)(6EA)", price: "38,000원", img: "./img/desert/샤블레(4EA).jpg", badge: "BEST" },
 	        { title: "쇼꼴라 노아젯트", price: "33,000원", img: "./img/desert/쇼꼴라 노아젯트.jpg", badge: "NEW" },
 	        { title: "시칠리아(6EA)", price: "29,000원", img: "./img/desert/시칠리아(6EA).jpg", badge: "추천" },
 	        { title: "아몬드 쇼꼴라 2종", price: "33,000원", img: "./img/desert/아몬드 쇼꼴라 2종.jpg" },
@@ -326,7 +348,7 @@
 	        { title: "초코빨미에(10EA)", price: "39,000원", img: "./img/desert/초코빨미에(10EA).jpg", badge: "BEST" },
 	        { title: "초코쿠키(6EA)", price: "37,000원", img: "./img/desert/초코쿠키(6EA).jpg", badge: "NEW" },
 	        { title: "초코페라", price: "39,000원", img: "./img/desert/초코페라.jpg", badge: "추천" },
-	        { title: "코코넛쿠키(6EA)", price: "37,000원", img: "./img/desert/코코넛쿠키(6EA).jpg" },	      
+	        { title: "코코넛쿠키(6EA)", price: "37,000원", img: "./img/desert/코코넛쿠키(6EA).jpg" },	      	
 	    ];
 
 
@@ -334,9 +356,10 @@
         let currentPage = 1;
 
         function displayItems(page) {
+            const filteredItems = items.filter(item => item.badge === "NEW");
             const startIndex = (page - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
-            const itemsToDisplay = items.slice(startIndex, endIndex);
+            const itemsToDisplay = filteredItems.slice(startIndex, endIndex);
             
             const itemWrap = document.getElementById('itemWrap');
             itemWrap.innerHTML = '';
@@ -344,23 +367,18 @@
             itemsToDisplay.forEach(item => {
                 const itemElem = document.createElement('dl');
                 itemElem.classList.add('item_elem');
-                
-                // 배지가 undefined인 경우 배지 요소를 표시하지 않음
-                const badgeHTML = item.badge ? `<div class="badge">${item.badge}</div>` : '';
-                const imgSrc = item.img || ''; // 이미지가 없는 경우 빈 문자열 할당
-
                 itemElem.innerHTML = `
-                    ${badgeHTML}
+                    <div class="badge">${item.badge}</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="${imgSrc}" alt="${item.title}">
-                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}', '${imgSrc}')">
+                        <img class="prd_img" src="${item.img}">
+                        <div class="cart-overlay" onclick="addToCart('${item.title}', '${item.price}')">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
                             <li class="prd_title">
-                                <a href="#" onclick="viewItemDetail('${item.title}', '${item.price}', '${imgSrc}', '${item.badge}')">${item.title}</a>
+                                <a href="#">${item.title}</a>
                             </li>
                             <li class="prd_price">
                                 ${item.price}
@@ -375,7 +393,7 @@
                 itemWrap.appendChild(itemElem);
             });
         }
-        
+
         function setupPagination(totalItems) {
             const pagination = document.getElementById('pagination');
             const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -403,7 +421,53 @@
             }
         }
 
-     // 장바구니에 상품 추가
+        // 초기화
+        document.getElementById('totalItemCount').textContent = items.filter(item => item.badge === "NEW").length;
+        displayItems(currentPage);
+        setupPagination(items.filter(item => item.badge === "NEW").length);
+
+        function getRandomItems(arr, num) {
+            const shuffled = arr.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        function setUpRecommendationItems() {
+            const recommendedItems = getRandomItems(items.filter(item => item.badge === "NEW"), 4);
+
+            recommendedItems.forEach((item, index) => {
+                const imgElement = document.querySelectorAll('.card-img-top')[index];
+                imgElement.src = item.img;
+                document.querySelectorAll('.card-title')[index].textContent = item.title;
+                document.querySelectorAll('.card-text')[index].textContent = item.price;
+
+                // 이미지 클릭 시 itemDetail로 이동하게 하는 이벤트 추가
+                imgElement.addEventListener('click', function() {
+                    localStorage.setItem('selectedItem', JSON.stringify(item));
+                    window.location.href = 'itemDetail.html';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+
+            if (selectedItem) {
+                // 제목, 가격, 이미지, 배지를 각각의 위치에 표시
+                document.getElementById('prd-tit-h').textContent = selectedItem.title;
+                document.querySelector('.price .tb-left b').textContent = selectedItem.price;
+                document.querySelector('.thumb-wrap img').src = selectedItem.img;
+
+                // 상세 이미지 경로 처리
+                const detailImgSrc = selectedItem.img.replace('.jpg', '_상세.jpg');
+                document.querySelector('.tab-pane.show.active img').src = detailImgSrc;
+
+                // 추천 상품 설정
+                setUpRecommendationItems();
+            }
+        });
+        
+        
+        // 로컬 스토리지를 사용하여 장바구니에 상품 추가
         function addToCart(title, price, img) {
             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
@@ -415,7 +479,7 @@
                 cartItems.push({
                     title,
                     price,
-                    img: img || 'default-image-path.jpg', // img가 undefined인 경우 기본 이미지 사용
+                    img,
                     quantity: 1
                 });
             }
@@ -429,9 +493,8 @@
             }
         }
 
-        // 상품 상세보기
         function viewItemDetail(title, price, img, badge) {
-            const itemDetail = { title, price, img: img || 'default-image-path.jpg', badge };
+            const itemDetail = { title, price, img, badge };
             localStorage.setItem('selectedItem', JSON.stringify(itemDetail));
             window.location.href = 'itemDetail.html';
         }
@@ -440,6 +503,7 @@
         document.getElementById('totalItemCount').textContent = items.length;
         displayItems(currentPage);
         setupPagination(items.length);
+       
         
     </script>
 </div>

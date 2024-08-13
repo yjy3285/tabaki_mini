@@ -3,8 +3,9 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/center.css"><meta charset="UTF-8">
-<title>디저트</title>
+    <link rel="stylesheet" href="css/center.css">
+<meta charset="UTF-8">
+<title>케이크</title>
 <style>
     body {
         background-color: #f9f9f9;
@@ -56,13 +57,13 @@
         color: #333;
     }
 
-    #top_category {
+    .top_category {
         margin-bottom: 40px;
         display: flex;
         justify-content: center;
     }
 
-    #top_category ul {
+    .top_category ul {
         list-style: none;
         padding: 0;
         margin: 0;
@@ -70,7 +71,7 @@
         witdh : 50%;
     }
 
-	#top_category ul {
+	.top_category ul {
 	    display: flex;
 	    justify-content: space-between;
 	    list-style: none;
@@ -80,7 +81,7 @@
 	    background-color: #fff;
 	}
 	
-	#top_category li {
+	.top_category li {
 	    background-color: #c85855;
 	    color: #fff;
 	    padding: 10px;
@@ -93,12 +94,12 @@
 	    font-size: 20px;
 	}
 	
-	#top_category li a {
+	.top_category li a {
 	    color: #fff;
 	    text-decoration: none;
 	}
 	
-	#top_category li:hover {
+	.top_category li:hover {
 	    background-color: #a94444;
 	}
 
@@ -257,23 +258,23 @@
     
     <!-- 상품 목록 페이지 시작 -->
     <div id="contentWrapper">
+        <!-- Breadcrumbs 영역 시작-->
+        <nav class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">추천</a></li>
+            </ol>
+        </nav>
     
-    <!-- Breadcrumbs 영역 시작-->
-	<nav class="breadcrumb-container">
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-			<li class="breadcrumb-item"><a href="#">디저트</a></li>
-		</ol>
-	</nav>
-	
+    
         <!-- 상품 목록 내용 -->
         <div id="contentWrap">
             <!-- 지역 선택 분류 상단 메뉴 -->
-            <div id="top_category">
+            <div class="top_category">
                 <ul>
-                    <li class="btn btn-danger"><a href="itemList_bread.html">빵</a></li>
-                    <li class="btn btn-danger"><a href="itemList_cake.html">케이크</a></li>
-                    <li class="btn btn-danger"><a href="itemList_desert.html">디저트</a></li>
+                    <li id="bread">빵</li>
+                    <li id="cake">케이크</li>
+                    <li id="desert">디저트</li>
                 </ul>
             </div>
             <!-- 상품 목록 하단 시작 -->
@@ -303,40 +304,73 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
     <script>
 	    const items = [
-	        { title: "그리스넛(6EA)", price: "38,000원", img: "./img/desert/그리스넛(6EA).jpg", badge: "BEST" },
-	        { title: "꼬끼유(12EA)", price: "33,000원", img: "./img/desert/꼬끼유(12EA).jpg", badge: "NEW" },
-	        { title: "노아(6EA)", price: "29,000원", img: "./img/desert/노아(6EA).jpg", badge: "추천" },
-	        { title: "뚜쇼꼬(8EA)", price: "33,000원", img: "./img/desert/뚜쇼꼬(8EA).jpg" },
-	        { title: "라무르(6EA)", price: "42,000원", img: "./img/desert/라무르(6EA).jpg", badge: "BEST" },
-	        { title: "라피누", price: "29,000원", img: "./img/desert/라피누.jpg", badge: "NEW" },
-	        { title: "랑그 드 샤", price: "20,000원", img: "./img/desert/랑그 드 샤.jpg", badge: "추천" },
-	        { title: "루이즈의 모자(5EA)", price: "29,000원", img: "./img/desert/루이즈의 모자(5EA).jpg" },
-	        { title: "미니망디앙(8EA)", price: "39,000원", img: "./img/desert/미니망디앙(8EA).jpg", badge: "BEST" },
-	        { title: "복수초·요깡 세트", price: "37,000원", img: "./img/desert/복수초·요깡 세트.jpg", badge: "NEW" },
-	        { title: "빨미에(10EA)", price: "39,000원", img: "./img/desert/빨미에(10EA).jpg", badge: "추천" },
-	        { title: "빨미에(대)(10EA)", price: "37,000원", img: "./img/desert/빨미에(대)(10EA).jpg" },
-			{ title: "샤블레(4EA)(6EA)", price: "38,000원", img: "./img/desert/샤블레(4EA).jpg", badge: "BEST" },
-	        { title: "쇼꼴라 노아젯트", price: "33,000원", img: "./img/desert/쇼꼴라 노아젯트.jpg", badge: "NEW" },
-	        { title: "시칠리아(6EA)", price: "29,000원", img: "./img/desert/시칠리아(6EA).jpg", badge: "추천" },
-	        { title: "아몬드 쇼꼴라 2종", price: "33,000원", img: "./img/desert/아몬드 쇼꼴라 2종.jpg" },
-	        { title: "안나마리아", price: "42,000원", img: "./img/desert/안나마리아.jpg", badge: "BEST" },
-	        { title: "에스까르고(10EA)", price: "29,000원", img: "./img/desert/에스까르고(10EA).jpg", badge: "NEW" },
-	        { title: "잣쿠키(6EA)", price: "20,000원", img: "./img/desert/잣쿠키(6EA).jpg", badge: "추천" },
-	        { title: "초코 구운과자 묶음(4+1)", price: "29,000원", img: "./img/desert/초코 구운과자 묶음(4+1).jpg" },
-	        { title: "초코빨미에(10EA)", price: "39,000원", img: "./img/desert/초코빨미에(10EA).jpg", badge: "BEST" },
-	        { title: "초코쿠키(6EA)", price: "37,000원", img: "./img/desert/초코쿠키(6EA).jpg", badge: "NEW" },
-	        { title: "초코페라", price: "39,000원", img: "./img/desert/초코페라.jpg", badge: "추천" },
-	        { title: "코코넛쿠키(6EA)", price: "37,000원", img: "./img/desert/코코넛쿠키(6EA).jpg" },	      
-	    ];
+	        { title: "걀렛뜨 데로와 푀유떼", price: "9,800원", img: "./img/bread/걀렛뜨 데로와 푀유떼.jpg", badge: "BEST", category: "bread", reviewCount: "8" },
+	        { title: "그리오틴 케익(6EA)", price: "14,800원", img: "./img/bread/그리오틴 케익(6EA).jpg", badge: "NEW", category: "bread", reviewCount: "8" },
+	        { title: "되리브르(대)", price: "15,000원", img: "./img/bread/되리브르(대).jpg", badge: "추천", category: "bread", reviewCount: "8" },
+	        { title: "땅드레스 아로랑쥬(6EA)", price: "14,800원", img: "./img/bread/땅드레스 아로랑쥬(6EA).jpg", badge: "인기", category: "bread", reviewCount: "8" },
+	        { title: "로데브", price: "4,500원", img: "./img/bread/로데브.jpg", badge: "BEST", category: "bread", reviewCount: "8" },
+	        { title: "르뱅 꾸뻬", price: "3,800원", img: "./img/bread/르뱅 꾸뻬.jpg", badge: "NEW", category: "bread", reviewCount: "8" },
+	        { title: "마블케익", price: "20,000원", img: "./img/bread/마블케익.jpg", badge: "추천", category: "bread", reviewCount: "8" },
+	        { title: "바따르", price: "4,200원", img: "./img/bread/바따르.jpg", badge: "인기", category: "bread", reviewCount: "8" },
+	        { title: "빠리지앵", price: "5,900원", img: "./img/bread/빠리지앵.jpg", badge: "BEST", category: "bread", reviewCount: "8" },
+	        { title: "뺑드미", price: "4,900원", img: "./img/bread/뺑드미.jpg", badge: "NEW", category: "bread", reviewCount: "8" },
+	        { title: "세글 누아레쟁", price: "4,000원", img: "./img/bread/세글 누아레쟁.jpg", badge: "추천", category: "bread", reviewCount: "8" },
+	        { title: "오렌지 케익", price: "22,000원", img: "./img/bread/오렌지케익.jpg", badge: "인기", category: "bread", reviewCount: "8" },
+	        { title: "유산균 발효 식빵", price: "4,000원", img: "./img/bread/유산균 발효 식빵.jpg", badge: "BEST", category: "bread", reviewCount: "8" },
+	        { title: "이탈리안 레몬케익", price: "21,000원", img: "./img/bread/이탈리안 레몬케익.jpg", badge: "NEW", category: "bread", reviewCount: "8" },
+	        { title: "잉글리쉬 파운드", price: "19,000원", img: "./img/bread/잉글리쉬 파운드.jpg", badge: "추천", category: "bread", reviewCount: "8" },
+	        { title: "자연효모빵", price: "4,600원", img: "./img/bread/자연효모빵.jpg", badge: "인기", category: "bread", reviewCount: "8" },
+	        { title: "갸또 쇼꼴라", price: "38,000원", img: "./img/cake/갸또 쇼꼴라.jpg", badge: "BEST", category: "cake", reviewCount: "8" },
+	        { title: "고구마 생크림 케익", price: "33,000원", img: "./img/cake/고구마 생크림 케익.jpg", badge: "NEW", category: "cake", reviewCount: "8" },
+	        { title: "까망베르 치즈케익", price: "29,000원", img: "./img/cake/까망베르 치즈케익.jpg", badge: "추천", category: "cake", reviewCount: "8" },
+	        { title: "바닐라 생크림 케익", price: "33,000원", img: "./img/cake/바닐라 생크림 케익.jpg", badge: "인기", category: "cake", reviewCount: "8" },
+	        { title: "샤를로뜨", price: "42,000원", img: "./img/cake/샤를로뜨.jpg", badge: "BEST", category: "cake", reviewCount: "8" },
+	        { title: "쉭쎄", price: "29,000원", img: "./img/cake/쉭쎄.jpg", badge: "NEW", category: "cake", reviewCount: "8" },
+	        { title: "스위스롤 & 말차롤케익", price: "20,000원", img: "./img/cake/스위스롤 & 말차롤케익.jpg", badge: "추천", category: "cake", reviewCount: "8" },
+	        { title: "티라미수", price: "29,000원", img: "./img/cake/티라미수.jpg", badge: "인기", category: "cake", reviewCount: "8" },
+	        { title: "파인치즈 케익", price: "39,000원", img: "./img/cake/파인치즈 케익.jpg", badge: "BEST", category: "cake", reviewCount: "8" },
+	        { title: "프레지에 에큠", price: "37,000원", img: "./img/cake/프레지에 에큠.jpg", badge: "NEW", category: "cake", reviewCount: "8" },
+	        { title: "프레지에", price: "39,000원", img: "./img/cake/프레지에.jpg", badge: "추천", category: "cake", reviewCount: "8" },
+	        { title: "후랑보아즈", price: "37,000원", img: "./img/cake/후랑보아즈.jpg", badge: "인기", category: "cake", reviewCount: "8" },
+	        { title: "그리스넛(6EA)", price: "38,000원", img: "./img/desert/그리스넛(6EA).jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "꼬끼유(12EA)", price: "33,000원", img: "./img/desert/꼬끼유(12EA).jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "노아(6EA)", price: "29,000원", img: "./img/desert/노아(6EA).jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "뚜쇼꼬(8EA)", price: "33,000원", img: "./img/desert/뚜쇼꼬(8EA).jpg", badge: "인기", category: "desert", reviewCount: "8" },
+	        { title: "라무르(6EA)", price: "42,000원", img: "./img/desert/라무르(6EA).jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "라피누", price: "29,000원", img: "./img/desert/라피누.jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "랑그 드 샤", price: "20,000원", img: "./img/desert/랑그 드 샤.jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "루이즈의 모자(5EA)", price: "29,000원", img: "./img/desert/루이즈의 모자(5EA).jpg", badge: "인기", category: "desert", reviewCount: "8" },
+	        { title: "미니망디앙(8EA)", price: "39,000원", img: "./img/desert/미니망디앙(8EA).jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "복수초·요깡 세트", price: "37,000원", img: "./img/desert/복수초·요깡 세트.jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "빨미에(10EA)", price: "39,000원", img: "./img/desert/빨미에(10EA).jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "빨미에(대)(10EA)", price: "37,000원", img: "./img/desert/빨미에(대)(10EA).jpg", badge: "인기", category: "desert", reviewCount: "8" },
+	      	{ title: "샤블레(4EA)(6EA)", price: "38,000원", img: "./img/desert/샤블레(4EA).jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "쇼꼴라 노아젯트", price: "33,000원", img: "./img/desert/쇼꼴라 노아젯트.jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "시칠리아(6EA)", price: "29,000원", img: "./img/desert/시칠리아(6EA).jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "아몬드 쇼꼴라 2종", price: "33,000원", img: "./img/desert/아몬드 쇼꼴라 2종.jpg", badge: "인기", category: "desert", reviewCount: "8" },
+	        { title: "안나마리아", price: "42,000원", img: "./img/desert/안나마리아.jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "에스까르고(10EA)", price: "29,000원", img: "./img/desert/에스까르고(10EA).jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "잣쿠키(6EA)", price: "20,000원", img: "./img/desert/잣쿠키(6EA).jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "초코 구운과자 묶음(4+1)", price: "29,000원", img: "./img/desert/초코 구운과자 묶음(4+1).jpg", badge: "인기", category: "desert", reviewCount: "8" },
+	        { title: "초코빨미에(10EA)", price: "39,000원", img: "./img/desert/초코빨미에(10EA).jpg", badge: "BEST", category: "desert", reviewCount: "8" },
+	        { title: "초코쿠키(6EA)", price: "37,000원", img: "./img/desert/초코쿠키(6EA).jpg", badge: "NEW", category: "desert", reviewCount: "8" },
+	        { title: "초코페라", price: "39,000원", img: "./img/desert/초코페라.jpg", badge: "추천", category: "desert", reviewCount: "8" },
+	        { title: "코코넛쿠키(6EA)", price: "37,000원", img: "./img/desert/코코넛쿠키(6EA).jpg", badge: "인기", category: "desert", reviewCount: "8" },       
+	    ];   
+	
 
-
+	    // 페이지 출력
         const itemsPerPage = 12; // 페이지당 최대 12개 표시
         let currentPage = 1;
+        let currentCategory = 'bread'; // 기본적으로 'bread' 카테고리 선택
 
         function displayItems(page) {
+            const filteredItems = items.filter(item => item.category === currentCategory);
             const startIndex = (page - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
-            const itemsToDisplay = items.slice(startIndex, endIndex);
+            const itemsToDisplay = filteredItems.slice(startIndex, endIndex);
+            
+            const top_category = document.getElementById('itemWrap');
             
             const itemWrap = document.getElementById('itemWrap');
             itemWrap.innerHTML = '';
@@ -345,7 +379,6 @@
                 const itemElem = document.createElement('dl');
                 itemElem.classList.add('item_elem');
                 
-                // 배지가 undefined인 경우 배지 요소를 표시하지 않음
                 const badgeHTML = item.badge ? `<div class="badge">${item.badge}</div>` : '';
                 const imgSrc = item.img || ''; // 이미지가 없는 경우 빈 문자열 할당
 
@@ -367,15 +400,19 @@
                             </li>
                             <li class="prd_review">
                                 <em>상품후기</em>
-                                "상품후기갯수"
+                                (${item.reviewCount})
                             </li>
                         </ul>
                     </dd>
                 `;
                 itemWrap.appendChild(itemElem);
             });
+
+            document.getElementById('totalItemCount').textContent = filteredItems.length;
+            setupPagination(filteredItems.length);
         }
         
+        // 페이지네이션 설정
         function setupPagination(totalItems) {
             const pagination = document.getElementById('pagination');
             const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -403,7 +440,16 @@
             }
         }
 
-     // 장바구니에 상품 추가
+        // 카테고리 변경 이벤트 리스너 추가
+        document.querySelectorAll('#top_category li').forEach(li => {
+            li.addEventListener('click', function() {
+                currentCategory = this.id; // 선택된 카테고리로 변경
+                currentPage = 1; // 페이지를 첫 페이지로 리셋
+                displayItems(currentPage);
+            });
+        });
+
+        // 장바구니에 상품 추가
         function addToCart(title, price, img) {
             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
@@ -437,10 +483,9 @@
         }
 
         // 초기화
-        document.getElementById('totalItemCount').textContent = items.length;
         displayItems(currentPage);
-        setupPagination(items.length);
-        
+
+
     </script>
 </div>
 </body>
