@@ -173,6 +173,8 @@ body {
 }
 .table tbody tr td a, .table tbody tr td a i{
     color: #333;
+    display: block;
+    width: 100%;
 }
 .del-status {
     font-size: 9pt;
