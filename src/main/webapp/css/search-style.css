@@ -1,0 +1,141 @@
+/* Pretendard-Regular 폰트 페이스 정의 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Noto Sans KR 폰트 페이스 정의 */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbykFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+/* h1 요소에 대한 스타일 정의 */
+h1 {
+    text-align: center;
+}
+
+/* body 요소에 대한 기본 스타일 정의 */
+body {
+    font-family: 'Pretendard-Regular','Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 컨테이너 클래스에 대한 스타일 정의 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 브레드크럼 내비게이션에 대한 스타일 정의 */
+nav.breadcrumb {
+    background-color: white;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
+}
+
+/* 브레드크럼 내비게이션 링크에 대한 스타일 정의 */
+nav.breadcrumb a {
+    color: #333;
+}
+
+/* 컨텐츠 래퍼에 대한 스타일 정의 */
+.content-wrapper {
+    text-align: center;
+}
+
+/* 테이블 요소에 대한 기본 스타일 정의 */
+table {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* 테이블 셀에 대한 기본 스타일 정의 */
+table td {
+    vertical-align: middle;
+}
+
+/* 테이블의 첫 번째 셀에 대한 스타일 정의 */
+table td:first-child {
+    width: 100px;
+}
+
+/* 탭 버튼 컨테이너에 대한 스타일 정의 */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* 탭 버튼에 대한 기본 스타일 정의 */
+.tab-button {
+    flex: 1;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 350px;
+}
+
+/* 활성화된 탭 버튼에 대한 스타일 정의 */
+.tab-button.active {
+    background-color: #e2e2e2;
+    font-weight: bold;
+}
+
+/* 라벨 요소에 대한 스타일 정의 */
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* 텍스트 입력 및 셀렉트 박스에 대한 스타일 정의 */
+input[type="text"], select {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 제출 버튼에 대한 스타일 정의 */
+button[type="submit"] {
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+/* 추가 정보 안내 텍스트에 대한 스타일 정의 */
+.info {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+}
