@@ -27,3 +27,25 @@ $('#totalProductSelect').change(function(event){
         $(this).prop('checked', isChecked);
     });
 });
+
+$('#productSearchForm').submit(function(event){
+    event.preventDefault();
+    const selector = $('select#searchProductSelect option:selected');
+    
+    if (selector.val() == '검색조건') {
+        alert('검색 조건을 선택하세요.');
+    } else {
+        alert('검색을 진행합니다.\n선택한 검색 타입 : '+selector.val());
+    }
+});
+
+$('#orderSearchForm').submit(function(event){
+    event.preventDefault();
+    const selector = $('select#searchOrderSelect option:selected');
+    
+    if (selector.val() == '검색조건') {
+        alert('검색 조건을 선택하세요.');
+    } else {
+        alert('검색을 진행합니다.\n선택한 검색 타입 : '+selector.val());
+    }
+});
