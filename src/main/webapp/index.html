@@ -139,10 +139,40 @@
 		<!-- content 부분입니다. -->
     	
 		<div id="contentWrapper">
-					<!-- 배너 -->
-			<div class="banner">
-				<a href="#"><img src="img/banner-img1.jpg"></a>
+		
+			<!-- 슬라이더 -->
+			<div class="slideshow-container">
+			
+			  <div class="mySlides fade">
+			    <div class="numbertext">1 / 2</div>
+			    <img src="img/banner-img1.jpg" style="width:100%">
+			    <div class="slideshow-text">Bakery TOBAKI</div>
+			  </div>
+			
+			  <div class="mySlides fade">
+			    <div class="numbertext">2 / 3</div>
+			    <img src="img/banner-img2.jpg" style="width:100%">
+			    <div class="slideshow-text">Bakery TOBAKI</div>
+			  </div>
+			
+			  <div class="mySlides fade">
+			    <div class="numbertext">3 / 3</div>
+			    <img src="img/banner-img3.jpg" style="width:100%">
+			    <div class="slideshow-text">Bakery TOBAKI</div>
+			  </div>
+
+			  <!-- Next and previous buttons -->
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 			</div>
+			<br>
+			
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span>
+			  <span class="dot" onclick="currentSlide(2)"></span>
+			  <span class="dot" onclick="currentSlide(3)"></span>
+			</div>					
 
 			<div class="intro">
 				<h3>꾸준히 사랑받는 <strong>베스트</strong></h3>
@@ -467,7 +497,7 @@
     </footer>
     
     </div>
-	
+	<script src="js/index.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
