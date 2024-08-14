@@ -40,8 +40,10 @@ function plus(button) {
     } else {
         alert("최대 수량은 10개입니다.");
     }
-    updateItemPrice(button);
-    updateTotalPrice();
+	
+	updateItemPrice(button);
+	updateTotalPrice();
+
 }
 
 // 수량 감소 함수
@@ -54,7 +56,41 @@ function minus(button) {
     } else {
         alert("최소 수량은 1개입니다.");
     }
+	
+	updateItemPrice(button);
+	updateTotalPrice();
+
 }
+
+
+
+// 결제 예정가 수정 함수
+function updateItemPrice(button) {
+    const row = button.closest('tr');
+    const priceElement = row.querySelector('.currentPrice');
+    const unitPriceText = priceElement.dataset.unitPrice;
+    const quantity = parseInt(row.querySelector('input[type="text"]').value, 10);
+
+    const unitPrice = parseInt(unitPriceText.replace(/[^0-9]/g, ''), 10);
+    const newPrice = unitPrice * quantity;
+
+    priceElement.innerText = newPrice.toLocaleString() + '원';
+}
+
+
+// 총금액 수정 함수
+function updateTotalPrice() {
+    let totalPrice = 0;
+    const rows = document.querySelectorAll('#cartTable tbody tr');
+    rows.forEach(function (row) {
+        const priceText = row.querySelector('.currentPrice').innerText;
+        const price = parseInt(priceText.replace(/[^0-9]/g, ''), 10);
+        totalPrice += price;
+    });
+    document.querySelector('.basket_totalprice strong').innerText = totalPrice.toLocaleString() + '원';
+}
+
+
 
 // 버튼에 이벤트 리스너 추가
 document.querySelectorAll('.quantity-control button:first-child').forEach(function(button) {
@@ -68,8 +104,4 @@ document.querySelectorAll('.quantity-control button:last-child').forEach(functio
         plus(this);
     });
 });
-
-
-
-
 
