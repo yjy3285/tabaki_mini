@@ -10,7 +10,7 @@ body {
     padding: 0;
     background-color: #fff;
 }
-.wrapper, .container {
+.wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -18,7 +18,6 @@ body {
 .main-content {
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
     max-width: 1200px;
     margin: 40px auto 40px auto;
 }
@@ -183,4 +182,7 @@ body {
 .table-wrapper {
     height: 400px; /* 전체 테이블 높이 */
     overflow-y: auto;
+}
+table.order-list-table tbody tr td, table.order-list-table tbody tr th {
+    vertical-align: middle;
 }
