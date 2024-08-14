@@ -4,12 +4,9 @@ body, h1, h2, h3, h4, h5, h6, table, pre, xmp, plaintext, listing, input, textar
 
 #contentWrapper {
 	width: 1200px;
-	padding: 40px 0;
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-   
-	
 	min-height: calc(100vh - 579px);
 }
 
