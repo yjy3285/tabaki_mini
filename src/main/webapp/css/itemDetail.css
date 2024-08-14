@@ -175,3 +175,10 @@
 	.list-navigator ul li a {
 		font-size: 10pt !important;
 	}
+	
+	.breadcrumb {
+		border: hidden !important;
+		background-color: #fff;
+		margin-left: 30px
+	}
+	
