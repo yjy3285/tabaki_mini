@@ -10,6 +10,10 @@ body, h1, h2, h3, h4, h5, h6, table, pre, xmp, plaintext, listing, input, textar
 	min-height: calc(100vh - 579px);
 }
 
+#contentWrap {
+	padding-top: 40px;
+}
+
 #content {    
     margin-top: 30px;
     margin-bottom: 30px;
