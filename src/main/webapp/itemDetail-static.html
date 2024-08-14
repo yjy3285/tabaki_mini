@@ -52,7 +52,7 @@
 										<a class="dropdown-item" href="center-board-list.html">상품문의</a>
 										<a class="dropdown-item" href="center-board-list.html">상품후기</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="admin/admin-main.html">관리자 사이트</a>
+										<a class="dropdown-item" href="admin-main.html">관리자 사이트</a>
 									</div>
 								</li>
 							</ul>
@@ -64,68 +64,81 @@
 			<div class="main-logo">
 				<a href="index.html"><img src="img/main-logo.png" width="150px"></a>
 			</div>
-			<!-- 헤더의 하단 프레임-->
-			<div class="header-bottom">
-				<nav class="top-nav navbar navbar-expand-lg navbar-light bg-light header-font">
-					<!--전체 카테고리 버튼-->
-					<div class="top-ctg-list">
-						<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-							<button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle header-font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
-							</button>
-							<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-								<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
-								<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
-								<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
-							</div>
-						</div><!--
-						<a href="#">"카테고리버튼"</a>
-						<div class="top-ctg">
-							<div class="left-category clear">
-								ul 태그를 통한 하단 리스트들~
-							</div>
-							-->
-					</div>
-					<!--추가 상단 네비게이션 리스트-->
-					<div class="top-menu collapse navbar-collapse" id="navbarColor03">
-						<ul class="navbar-nav mr-auto header-font-size ">
-							<li class="nav-item">
-								<a class="nav-link" href="itemList-best.html">베스트</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="itemList-best.html">신상품</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="itemList-best.html">추천상품</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="center-board-list.html">공지사항</a>
-							</li>
-						</ul>
-					</div>
-					<!--상단네비 검색 및 장바구니-->
-					<div class="top-menu-finder-cart">
-						<div class="top-finder">
-							<div class="input-group">
-								<input class="form-control" type="text" placeholder="상품 검색">
-								<div class="input-group-append">
-									<button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+
+			<div class="d-flex" style="margin-left: 30px;">
+				<!-- 헤더의 하단 프레임-->
+				<div class="header-bottom container-fluid">
+					<nav class="top-nav navbar navbar-expand-lg navbar-light bg-light header-font w-100 pl-0">
+						<!--전체 카테고리 버튼-->
+						<div class="top-ctg-list">
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+								<button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle header-font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
+								</button>
+								<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
+								</div>
+							</div><!--
+							<a href="#">"카테고리버튼"</a>
+							<div class="top-ctg">
+								<div class="left-category clear">
+									ul 태그를 통한 하단 리스트들~
+								</div>
+								-->
+						</div>
+						<!--추가 상단 네비게이션 리스트-->
+						<div class="top-menu collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto header-font-size ">
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">베스트</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">신상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">추천상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="center-board-list.html">공지사항</a>
+								</li>
+							</ul>
+						</div>
+						<!--상단네비 검색 및 장바구니-->
+						<form action="#" id="headerSearch">
+							<div class="top-menu-finder-cart align-self-end">
+								<div class="top-finder">
+									<div class="input-group">
+										<input class="form-control headerSearchInput" type="text" placeholder="상품 검색">
+										<div class="input-group-append">
+											<button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart">
+									<a href="orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>									
+									<span class="cart-count">3</span>
 								</div>
 							</div>
-						</div>
-						<div class="top-cart">
-							<a href="orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>
-							<span class="cart-count">3</span>
-						</div>
-					</div>
-				</nav>
+						</form>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</header>
 	
+		
 		<!-- 상세페이지 -->
 		<div id="contentWrapper">
+
 			<div id="contentWrap">
+				<nav class="breadcrumb-container">
+		            <ol class="breadcrumb">
+		                <li class="breadcrumb-item"><a href="index.html" style="color: black !important;><i class="fas fa-home"></i></a></li>
+		                <li class="breadcrumb-item"><a href="itemDetail-static.html" style="color: black !important;">상세페이지</a></li>            
+		            </ol>
+				</nav>
 				<div id="productDetail" class="fixed_view">
 					<div class="page_body">
 						<!-- 상품 설명 상단 -->

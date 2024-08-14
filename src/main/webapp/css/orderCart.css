@@ -126,3 +126,12 @@ tbody {
 .quantity-control button:hover {
 	background-color: #ccc;
 }
+
+    
+	.breadcrumb {
+		border: hidden !important;
+		background-color: #fff;
+		margin-left: 30px
+	}
+	
+
