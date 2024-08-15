@@ -156,21 +156,21 @@
             <!-- 게시글 작성 컴포넌트 시작 -->
             <div class="card my-4">
                 <div class="card-body">
-                    <form>
+                    <form action="#" id="boardWriteForm">
                         <div class="form-group d-flex align-items-center">
                             <div class="form-title">
                                 <label class="control-label" for="memberName"><b>이름</b></label>
                             </div>
                             <div class="form-content">
-                                <input class="form-control" id="memberName" type="text" placeholder="엄상식" readonly>
+                                <input class="form-control" id="memberName" type="text" value="엄상식" readonly>
                             </div>
                         </div>
                         <hr class="hr"/>
                         <!-- 상품 문의 작성 페이지시 visible-->
                         <!-- 주문에 대한 문의가 아님. 구매자가 주문 이전에 상품에 대한 질문을 하는 곳. -->
-                        <div class="form-group d-flex align-items-center">
+                        <div class="form-group d-flex align-items-center" id="productListForm">
                             <div class="form-title">
-                                <label for="content" class="col-form-label"><b>유형</b></label>
+                                <b>유형</b>
                             </div>
                             <div class="form-content d-flex flex-grow-1">
                                 <div class="form-start d-flex align-items-center border-left">
@@ -182,8 +182,8 @@
                                     </select>
                                 </div>
                                 <div class="form-end d-flex align-items-center border-left">
-                                    <label for="productName" class="text-center">상품이름</label>
-                                    <select class="form-control" id="productName">
+                                    <label for="boardProductName" class="text-center">상품이름</label>
+                                    <select class="form-control" id="boardProductName">
                                         <option value="pid1">옥수수빵</option>
                                         <option value="pid2">옥수수식빵</option>
                                         <option value="pid3">생크림빵</option>
@@ -196,19 +196,19 @@
                         <hr class="hr"/>
                         <!-- 상품 문의 작성 페이지 속성 종료 -->
                         <!-- 리뷰 작성 페이지일 경우 visible-->
-                        <div class="form-group d-flex align-items-center w-100">
+                        <div class="form-group d-flex align-items-center w-100" id="productReviewForm">
                             <div class="form-title border-right w-30" style="height: 40px;">
                                 <label for="content" style="margin-right: 22px; line-height: 40px;"><b>리뷰 상품</b></label>
                             </div>
                             <div class="form-content max-width d-flex justify-content-center align-items-center" style="margin:0;">
                                 <div class="square-img"><img src="img/cake/갸또 쇼꼴라.jpg" class="img-fluid"></div>
                                 <span id="reviewProdName" class="mx-3">상품명 :&emsp;[<b>갸또 쇼콜라</b>]</span>
-                                <span id="reviewProdName" class="mx-3">가격 :&emsp;[<b>5,000원</b>]</span>
+                                <span id="reviewProdPrice" class="mx-3">가격 :&emsp;[<b>5,000원</b>]</span>
                             </div>
                         </div>
                         <hr class="hr"/>
                         <!-- 리뷰 작성 페이지 속성 끝-->
-                        <div class="form-group d-flex">
+                        <div class="form-group d-flex" id="boradTitleForm">
                             <div class="form-title d-flex align-items-center">
                                 <label for="title" style="margin: 0;"><b>제목</b></label>
                             </div>
@@ -236,16 +236,16 @@
                         </div>
                         <hr class="hr"/>
                         <!-- 게시글 텍스트에리어 영역. smarteditor2 사용해서 끌어오려다가 잘 안됨. -->
-                        <div class="form-group d-flex">
+                        <div class="form-group d-flex" id="boradContentForm">
                             <div class="form-title d-flex align-items-center">
-                                <label for="content" style="margin: 0;"><b>내용</b></label>
+                                <label for="boardContent" style="margin: 0;"><b>내용</b></label>
                             </div>
                             <div class="form-content" style="width: 56%">
-                                <textarea class="form-control" id="content" rows="10"></textarea>
+                                <textarea class="form-control" id="boardContent" rows="10"></textarea>
                             </div>
                         </div>
                         <hr class="hr"/>
-                        <div class="form-group d-flex">
+                        <div class="form-group d-flex" id="boardFileForm">
                             <div class="form-title d-flex align-items-center">
                                 <label for="attachment" style="margin: 0;"><b>첨부</b></label>
                             </div>
@@ -268,7 +268,7 @@
     <footer>
     	<br>
         <div class="footer-container d-flex justify-content-center align-items-center">
-            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px"; >
+            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px;" >
             <div>
                 <p>(주)토박이</p>
                 <p>호스팅제공자: KOSA | 이메일 <a href="tobaki@test.com" class="text-danger">tobaki@test.com</a></p>
@@ -280,25 +280,9 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smarteditor2/2.0.0/js/HuskyEZCreator.js"></script>
-    <script>
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-            oAppRef: oEditors,
-            elPlaceHolder: "content",
-            sSkinURI: "https://cdnjs.cloudflare.com/ajax/libs/smarteditor2/2.0.0/SmartEditor2Skin.html",
-            fCreator: "createSEditor2"
-        });
-
-        function submitContents(elClickedObj) {
-            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
-            try {
-                elClickedObj.form.submit();
-            } catch (e) {}
-        }
-    </script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/center.js"></script>
 </body>
 </html>
