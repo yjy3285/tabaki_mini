@@ -94,3 +94,41 @@ $('#productListForm #category').change(function(event){
         }
     }
 });
+
+$('#commentForm').submit(function(event){
+    event.preventDefault();
+
+    const author = $('#memberName').val();
+    const content = $('#commentCentent').val().replace(/\n/g, '<br>');
+    if(!content) {
+        alert('내용을 입력해 주세요.');
+        return;
+    }
+
+    let formattedDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    const listTag = $('#commentList ul');
+    listTag.append(`
+        <li class="list-group-item">
+            <div class="reply-author">
+                <p>
+                    <strong>${author}</strong><small class="text-muted"> ${formattedDate}</small>
+                    <button class="btn btn-light btn-sm disabled commentDelete"><i class="fas fa-times"></i></button>
+                </p>
+            </div>
+            <div class="reply-content">
+                <p>${content}</p>
+            </div>
+        </li>
+    `);
+});
+
+$('#commentList').on('click', 'button.commentDelete', function(event){
+    // 서버가 없어서 임시로 작성자로 매칭하지만, 서버에서 데이터 받아와서 비교 다시 해야 함.
+    const actor = $('#memberName').val();
+    const author = $(this).closest('li').find('.reply-author p>strong').text();
+    if(actor != author) {
+        alert('권한이 없습니다.');
+        return;
+    }
+    $(this).closest('li').remove();
+});
