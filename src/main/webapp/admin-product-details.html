@@ -137,7 +137,7 @@
                 <h3>상품관리</h3>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item"><a class="nav-link active" href="admin-product-details.html">상품등록</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
+                    <li class="nav-item"><a class="nav-link" href="admin-main.html#orderList">주문조회</a></li>                   
                 </ul>
                 <hr class="hr"/>
                 <h3>고객센터</h3>
@@ -152,25 +152,36 @@
                 <h2>상품 등록</h2>
                 <hr class="hr">
                 <div class="d-flex form-wrapper my-4">
-                    <form action="#">
+                    <form action="#" id="productInsertForm">
                         <div class="product-container">
                             <div class="block-left flex-grow-1">
                                 <!-- 상품 이름 -->
                                 <div class="form-group">
                                     <label for="product-name"><b>상품명</b></label>
-                                    <input type="text" class="form-control" id="product-name" aria-describedby="productName" placeholder="상품 이름 입력">
+                                    <input type="text" class="form-control" id="product-name" aria-describedby="productName" placeholder="상품 이름 입력" required>
                                 </div>
                                 <!-- 상품 상세 -->
                                 <div class="form-group">
                                     <label for="product-details"><b>상품상세</b></label>
-                                    <textarea class="form-control" id="product-details" rows="5"></textarea>
+                                    <textarea class="form-control" id="product-details" rows="5" required></textarea>
                                     <input type="file" class="form-control-file mt-1" id="product-details-imagefile" aria-describedby="details-imagefile">
                                 </div>
+                                <!-- 상세이미지 경로 뽑기 위해 넣은 임시 스크립트 영역입니다. 백단에서는 지워도 됩니다. -->
+                                <script>
+                                    let prodDetailsImagePath;
+                                    document.getElementById('product-details-imagefile').addEventListener('change', function(event) {
+                                        const file = event.target.files[0];
+                                        if (file) {
+                                            prodDetailsImagePath = URL.createObjectURL(file);
+                                        }
+                                    });
+                                </script>
+                                <!-- 임시 스크립트 영역 종료 -->
                                 <!-- 카테고리 선택 -->
                                 <div class="form-group">
                                     <label for="product-category"><b>카테고리</b></label>
-                                    <select class="form-control form-select" id="product-category">
-                                      <option selected>카테고리 선택</option>
+                                    <select class="form-control form-select" id="product-category" required>
+                                      <option disabled selected>카테고리 선택</option>
                                       <option value="bread">Bread</option>
                                       <option value="cake">Cake</option>
                                       <option value="desert">Desert</option>
@@ -180,19 +191,19 @@
                                 <div class="d-flex justify-content-between" style="width: 95%;">
                                     <div class="form-group">
                                         <label for="product-price"><b>상품가격</b></label>
-                                        <input type="number" class="form-control" id="product-price" aria-describedby="productPrice" placeholder="상품 가격">
+                                        <input type="number" class="form-control" id="product-price" placeholder="상품 가격" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="product-amount"><b>상품수량</b></label>
-                                        <input type="number" class="form-control" id="product-amount" aria-describedby="productAmount" placeholder="수량 설정">
+                                        <input type="number" class="form-control" id="product-amount" placeholder="수량 설정" required>
                                     </div>
                                 </div>
                                 <!-- 배송업체 / 배송비용 -->
                                 <div class="d-flex justify-content-between" style="width: 95%;">
                                     <div class="form-group flex-sort">
                                         <label for="delivery-company"><b>배송업체</b></label>
-                                        <select class="form-control form-select" id="delivery-company">
-                                          <option selected>배송업체 선택</option>
+                                        <select class="form-control form-select" id="delivery-company" required>
+                                          <option disabled selected>배송업체 선택</option>
                                           <option value="1">대한통운</option>
                                           <option value="2">한진택배</option>
                                           <option value="3">롯데택배</option>
@@ -200,7 +211,7 @@
                                     </div>
                                     <div class="form-group flex-sort">
                                         <label for="delivery-price"><b>배송가격</b></label>
-                                        <input type="number" class="form-control" id="delivery-price" aria-describedby="deliveryPrice" placeholder="배송 가격">
+                                        <input type="number" class="form-control" id="delivery-price" placeholder="배송 가격">
                                     </div>
                                 </div>
                             </div>
@@ -224,8 +235,8 @@
                                 <label for="productState"><b>상품상태 설정</b></label>
                                 <div class="form-group d-flex justify-content-between" style="width: 95%;">
                                     <div class="flex-sort">
-                                        <select class="form-control form-select" id="productState">
-                                          <option selected>상품상태</option>
+                                        <select class="form-control form-select" id="productState" required>
+                                          <option disabled selected>상품상태</option>
                                           <option value="1">판매중</option>
                                           <option value="2">상품품절</option>
                                           <option value="3">판매중단</option>
@@ -233,7 +244,7 @@
                                     </div>
                                     <div class="flex-sort d-flex justify-content-center align-items-center checkbox-area">
                                         <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="recommendedProduct" value="recommendedProd" checked>
+                                            <input type="checkbox" class="custom-control-input" id="recommendedProduct" value="recommendedProd">
                                             <label class="custom-control-label" for="recommendedProduct"><b>추천상품 설정</b></label>
                                         </div>
                                     </div>
@@ -257,7 +268,7 @@
     <footer>
     	<br>
         <div class="footer-container d-flex justify-content-center align-items-center">
-            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px"; >
+            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px;" >
             <div>
                 <p>(주)토박이</p>
                 <p>호스팅제공자: KOSA | 이메일 <a href="tobaki@test.com" class="text-danger">tobaki@test.com</a></p>
