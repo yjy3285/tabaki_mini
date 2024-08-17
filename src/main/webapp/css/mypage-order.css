@@ -14,31 +14,38 @@ h1 {
 
 section {
     margin-bottom: 40px;
+    margin-left : 40px;
 }
 
 h2 {
     border-bottom: 2px solid black;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    width:100%;
+    
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    flex:center;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    
 }
 
 th {
     border-bottom: 2px solid black;
+    font-size:20px;
 }
 
 td {
     border-bottom: 1px solid #ddd;
+    
 }
 
 
@@ -47,10 +54,14 @@ td {
     text-align: right;
     font-weight: bold;
     margin-top: 10px;
+    font-size:16px;
+   
 }
 
 .section {
     margin-bottom: 20px;
+    width:100%;
+    
 }
 
 label {
@@ -91,10 +102,16 @@ input[type="text"], select, textarea {
 .final-payment-info {
     border: 2px solid gray;
     padding: 20px;
+    width:70%;
+    margin:auto;
+    margin-bottom:30px;
+    
+    
 }
 
 .final-payment-info h2 {
     border-bottom: none;
+    text-align: center;
 }
 
 .final-payment-info .summary {
@@ -105,13 +122,17 @@ input[type="text"], select, textarea {
 }
 
 .final-payment-info button {
-    width: 100%;
+   
     padding: 10px;
     background-color:gray;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 1.2em;
+    width:50%;
+    margin-left:200px;
+    
+    
 }
 
 .final-payment-info button:hover {
@@ -119,8 +140,9 @@ input[type="text"], select, textarea {
 }
 
 .order-notice table {
-    width: 100%;
+    
     border-collapse: collapse;
+    
 }
 
 .order-notice th, .order-notice td {
@@ -132,46 +154,13 @@ input[type="text"], select, textarea {
 .order-notice .agreement {
     margin-top: 20px;
     text-align: center;
+    
 }
 
 .order-notice input[type="radio"] {
     margin-right: 10px;
 }
 
-/* 모달 스타일 */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}        
 
 
 .breadcrumb {
@@ -180,6 +169,7 @@ input[type="text"], select, textarea {
     padding: 12px 14px;
     font-size: 9pt;
     border-style: none;
+    margin-left:35px;
 }
 .breadcrumb .breadcrumb-item a {
     color: gray;
@@ -188,3 +178,5 @@ input[type="text"], select, textarea {
     color: black;
     font-weight: bold;
 }
+
+
