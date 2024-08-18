@@ -34,10 +34,6 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(3)').addEve
 });
 
 
-// 선택상품 주문하기 버튼 기능
-document.querySelector('.btns_order .btn-outline-danger').addEventListener('click', function () {
-    window.location.href = 'mypage-order.html';
-});
 
 // 수량 증가 함수
 document.querySelectorAll('.quantity-control button:last-child').forEach(function(button) {
@@ -99,3 +95,14 @@ function updateTotalPrice() {
     });
     document.querySelector('.basket_totalprice strong').innerText = totalPrice.toLocaleString() + '원';
 }
+
+// 선택상품 주문하기 버튼 기능 & 유효성 체크
+document.querySelector('.btns_order .btn-outline-danger').addEventListener('click', function () {
+    const checkedItems = document.querySelectorAll('#cartTable tbody input[type="checkbox"]:checked');
+    
+    if (checkedItems.length > 0) {
+        window.location.href = 'mypage-order.html';
+    } else {
+        alert("선택된 제품이 없습니다.");
+    }
+});
