@@ -166,17 +166,6 @@
                                     <textarea class="form-control" id="product-details" rows="5" required></textarea>
                                     <input type="file" class="form-control-file mt-1" id="product-details-imagefile" aria-describedby="details-imagefile">
                                 </div>
-                                <!-- 상세이미지 경로 뽑기 위해 넣은 임시 스크립트 영역입니다. 백단에서는 지워도 됩니다. -->
-                                <script>
-                                    let prodDetailsImagePath;
-                                    document.getElementById('product-details-imagefile').addEventListener('change', function(event) {
-                                        const file = event.target.files[0];
-                                        if (file) {
-                                            prodDetailsImagePath = URL.createObjectURL(file);
-                                        }
-                                    });
-                                </script>
-                                <!-- 임시 스크립트 영역 종료 -->
                                 <!-- 카테고리 선택 -->
                                 <div class="form-group">
                                     <label for="product-category"><b>카테고리</b></label>
@@ -221,7 +210,7 @@
                                 <!-- 상품 이미지 -->
                                 <div class="form-group text-center">
                                     <div class="text-left ml-5">
-                                      <label for="productMainImage"><b>상품 이미지</b></label>
+                                      <label for="productMainImage"><b>상품 썸네일</b></label>
                                     </div>
                                     <img src="img/왕슈크림도넛.jpg" class="rounded" id="productMainImage" width="300px" height="275px"/>
                                     <div class="input-group input-center text-left mt-2 mb-3">
