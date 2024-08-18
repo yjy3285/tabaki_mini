@@ -40,6 +40,7 @@ body {
 nav.breadcrumb {
     background-color: white;
     font-size: 13px;
+    margin-left: 30px;
     margin-bottom: 20px;
     border: none;
     padding: 0;
@@ -119,8 +120,8 @@ input[type="text"], select {
 }
 
 /* 제출 버튼에 대한 스타일 정의 */
-button[type="submit"] {
-    width: 400px;
+button[type="check"] {
+    width: 200px;
     padding: 10px;
     margin: 0 auto;
     color: white;
@@ -129,7 +130,7 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    display: block;
+    display: inline-block;
 }
 
 /* 추가 정보 안내 텍스트에 대한 스타일 정의 */

@@ -36,6 +36,7 @@ body {
 nav.breadcrumb {
     background-color: white;
     font-size: 13px;
+    margin-left: 30px;
     margin-bottom: 20px;
     border: none;
     padding: 0;
@@ -115,7 +116,11 @@ table td:first-child {
 
 /* 추가 주소 입력 필드 스타일 */
 .input-group .form-control {
-    flex: 0 0 auto !important;
+    flex: 1 0 auto;
+}
+
+.input-group-append {
+    flex: 0 0 auto;
 }
 
 /* 여백 조정 */
