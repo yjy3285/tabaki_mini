@@ -3,7 +3,7 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(1)').addEve
     const checkedItems = document.querySelectorAll('#cartTable tbody input[type="checkbox"]:checked');
     checkedItems.forEach(function (item) {
         const row = item.closest('tr');
-        row.parentNode.removeChild(row);
+        row.remove(row);
     });
     updateTotalPrice();
 });
@@ -12,7 +12,7 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(1)').addEve
 document.querySelectorAll('.btn-danger.btn-sm').forEach(function(button) {
     button.addEventListener('click', function() {
         const row = this.closest('tr');
-        row.parentNode.removeChild(row);
+        row.remove(row);
         updateTotalPrice();
     });
 });
@@ -21,7 +21,7 @@ document.querySelectorAll('.btn-danger.btn-sm').forEach(function(button) {
 document.querySelector('.btns_order .btn-outline-secondary:nth-child(3)').addEventListener('click', function () {
     const cartItems = document.querySelectorAll('#cartTable tbody tr');
     cartItems.forEach(function (item) {
-        item.parentNode.removeChild(item);
+        item.remove(item);
     });
     updateTotalPrice();
 });
