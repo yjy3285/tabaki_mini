@@ -169,8 +169,23 @@
                                 <!-- 테이블 정적 내용물 -->
                                 <tr>
                                     <td><input type="checkbox"></td>
-                                    <td><a href="itemDetail-static.html"><img src="./img/bread/걀렛뜨 데로와 푀유떼.jpg" alt="걀렛뜨 데로와 푀유떼" width="100px"></a></td>
-                                    <td><a href="itemDetail-static.html" style="color: black !important;">걀렛뜨 데로와 푀유떼</a></td>
+                                    <td><a href="itemDetail-static.html"><img src="./img/cake/자연효모빵.jpg" width="100px"></a></td>
+                                    <td><a href="itemDetail-static.html" style="color: black !important;">자연효모빵</a></td>
+                                    <td>
+	                                    <div class="quantity-control">
+					                        <button>-</button>
+					                        <input type="text" value="2" min="1" max="10">
+					                        <button>+</button>
+				   						</div>
+                                    </td>                                    
+                                    <td class="currentPrice" data-unit-price="4600">9,200원</td>
+                                    <td><button class="btn btn-danger btn-sm">삭제</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td><a href="itemDetail-static.html"><img src="./img/bread/오렌지케익.jpg" width="100px"></a></td>
+                                    <td><a href="itemDetail-static.html" style="color: black !important;">오렌지케익</a></td>
                                     <td>
 	                                    <div class="quantity-control">
 					                        <button onclick="minus();">-</button>
@@ -178,23 +193,10 @@
 					                        <button onclick="plus();">+</button>
 				   						</div>
                                     </td>
-                                    <td class="currentPrice" data-unit-price="9800">9,800원</td>
+                                    <td class="currentPrice" data-unit-price="22000">22,000원</td>
                                     <td><button class="btn btn-danger btn-sm">삭제</button></td>
                                 </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td><a href="itemDetail-static.html"><img src="./img/cake/갸또 쇼꼴라.jpg" alt="갸또 쇼꼴라" width="100px"></a></td>
-                                    <td><a href="itemDetail-static.html" style="color: black !important;">갸또 쇼꼴라</a></td>
-                                    <td>
-	                                    <div class="quantity-control">
-					                        <button onclick="minus();">-</button>
-					                        <input type="text" value="2" min="1" max="10">
-					                        <button onclick="plus();">+</button>
-				   						</div>
-                                    </td>                                    
-                                    <td class="currentPrice" data-unit-price="38000">76,000원</td>
-                                    <td><button class="btn btn-danger btn-sm">삭제</button></td>
-                                </tr>
+
                                 <!-- 총 금액 -->
                             </tbody>
                             <tfoot>

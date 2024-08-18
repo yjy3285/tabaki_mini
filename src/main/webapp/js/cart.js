@@ -35,9 +35,9 @@ document.querySelector('.btns_order .btn-outline-danger').addEventListener('clic
 document.querySelectorAll('.quantity-control button:last-child').forEach(function(button) {
     button.addEventListener('click', function() {
         let currentValue = parseInt(this.previousElementSibling.value);
-        
-        if (currentValue < 1) {
-            this.nextElementSibling.value = currentValue + 1;
+         
+        if (currentValue < 10) {
+            this.previousElementSibling.value = currentValue + 1;
         } else {
             alert("최대 수량은 10개입니다.");
         }
