@@ -135,7 +135,7 @@
 			<div id="contentWrap">
 				<nav class="breadcrumb-container">
 		            <ol class="breadcrumb">
-		                <li class="breadcrumb-item"><a href="index.html" style="color: black !important;><i class="fas fa-home"></i></a></li>
+		                <li class="breadcrumb-item"><a href="index.html" style="color: black !important;"><i class="fas fa-home"></i></a></li>
 		                <li class="breadcrumb-item"><a href="itemDetail-static.html" style="color: black !important;">상세페이지</a></li>            
 		            </ol>
 				</nav>
@@ -345,7 +345,102 @@
 									<p>상품문의 내용</p>
 								</div>
 								<div class="tab-pane fade" id="product-reviews" role="tabpanel">
-									<p>상품후기 내용</p>
+								<!-- 상품후기 목록 및 내용을 볼 수 있는 부분입니다. -->
+									<div class="container mt-5">
+    <h2 style=text-align:center;>상품 후기</h2>
+    <br>
+    <div class="accordion" id="accordionExample">
+    <!-- 후기 리스트 테이블 -->
+    <table class="table table-bordered mt-3">
+        <thead class="thead-light">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>평점</th>
+                <th>조회</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td><div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-secondary disabled text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <strong>빵이 엄청 쫄깃해요~</strong>
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/wKhQSSb/image.jpg" alt="image" class="img-fluid"></a>
+                    <br>
+                    다음 날 먹어도 쫄깃하고 부드럽네요~ 너무 맛있어서 아이들과 만들어먹기도 했어요
+                </div>
+            </div>
+        </div>
+        </td>
+                <td>ba*****</td>
+                <td>2024/08/14</td>
+                <td>★★★★★</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-secondary disabled text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <strong>비주얼도 굿 맛도 굿!</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    생각보다 더 맛있네요. 선물용으로도 좋을 듯 해요~
+                </div>
+            </div>
+        </div>
+        </td>
+                <td>ka********</td>
+                <td>2024/08/12</td>
+                <td>★★★★★</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-secondary disabled text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <strong>인생 빵집입니다</strong>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    빵순이라서 여기저기 빵 많이 사러다녔지만 이렇게 부드럽고 맛있는 빵집은 처음이에요 ㅜㅜ단골 될 거같아요
+                </div>
+            </div>
+        </div></td>
+                <td>sj*******</td>
+                <td>2024/08/12</td>
+                <td>★★★★★</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+        
+        
+        
+    </div>
+</div>
+<!-- 상품후기 목록 및 내용 끝입니다. -->
 								</div>
 							</div>
 						</div>
@@ -361,7 +456,7 @@
     <footer>
     	<br>
         <div class="footer-container d-flex justify-content-center align-items-center">
-            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px"; >
+            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style = "margin-right:50px;" >
             <div>
                 <p>(주)토박이</p>
                 <p>호스팅제공자: KOSA | 이메일 <a href="tobaki@test.com" class="text-danger">tobaki@test.com</a></p>

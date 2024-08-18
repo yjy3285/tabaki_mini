@@ -6,9 +6,124 @@
     <title>관리자 - 메인</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
+	<header>
+		<!-- 헤더의 상단 프레임 -->
+		<div class="header-wrapper">
+			<!--헤더 탑 영역-->
+			<div class="header-top">
+				<!--왼쪽 상단 프레임-->
+				<div class="left-top"></div>
+				<!--오른쪽 상단 nav-->
+				<div class="right-top-nav">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light header-font">
+						<!--
+						<a class="navbar-brand" href="#">Navbar</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						-->
+						<div class="collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item active">
+									<a class="nav-link" href="index.html">메인
+										<span class="sr-only">(current)</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="login.html">로그인</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="member.html">회원가입</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="mypage-main.html">마이페이지</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="center-board-list.html" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="center-board-list.html">공지사항</a>
+										<a class="dropdown-item" href="center-board-list.html">상품문의</a>
+										<a class="dropdown-item" href="center-board-list.html">상품후기</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="admin-main.html">관리자 사이트</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!--중앙 메인 로고 프레임-->
+			<div class="main-logo">
+				<a href="index.html"><img src="img/main-logo.png" width="150px"></a>
+			</div>
+
+			<div class="d-flex" style="margin-left: 30px;">
+				<!-- 헤더의 하단 프레임-->
+				<div class="header-bottom">
+					<nav class="top-nav navbar navbar-expand-lg navbar-light bg-light header-font">
+						<!--전체 카테고리 버튼-->
+						<div class="top-ctg-list">
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+								<button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle header-font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
+								</button>
+								<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
+								</div>
+							</div><!--
+							<a href="#">"카테고리버튼"</a>
+							<div class="top-ctg">
+								<div class="left-category clear">
+									ul 태그를 통한 하단 리스트들~
+								</div>
+								-->
+						</div>
+						<!--추가 상단 네비게이션 리스트-->
+						<div class="top-menu collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto header-font-size ">
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">베스트</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">신상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">추천상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="center-board-list.html">공지사항</a>
+								</li>
+							</ul>
+						</div>
+						<!--상단네비 검색 및 장바구니-->
+						<form action="#" id="headerSearch">
+							<div class="top-menu-finder-cart">
+								<div class="top-finder">
+									<div class="input-group">
+										<input class="form-control headerSearchInput" type="text" placeholder="상품 검색">
+										<div class="input-group-append">
+											<button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart">
+									<a href="orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>									<span class="cart-count">3</span>
+								</div>
+							</div>
+						</form>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
     <div class="container">
         <div class="main-content">
             <!-- 사이드바 시작 -->
@@ -21,7 +136,7 @@
                 <h3>상품관리</h3>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item"><a class="nav-link" href="admin-product-details.html">상품등록</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
+                    <li class="nav-item"><a class="nav-link" href="#orderList">주문조회</a></li>                   
                 </ul>
                 <hr class="hr"/>
                 <h3>고객센터</h3>
@@ -60,446 +175,448 @@
                                     <option value="category">분류</option>
                                     <option value="pstatus">상태</option>
                                 </select>
-                                <input class="form-control mr-sm-0" type="text" placeholder="Search">
+                                <input class="form-control mr-sm-0" type="text" placeholder="Search" id="productSearchKeyword">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="table-wrapper">
-                        <table class="table table-hover table-striped">
-                            <thead class="thead-fixed">
-                                <tr class="table-secondary text-center">
-                                    <!-- 상품 전체 토글 -->
-                                    <th style="width: 30px" class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="totalProductSelect">
-                                            <label class="custom-control-label" for="totalProductSelect"></label>
-                                        </div>
-                                    </th>
-                                    <!-- 토글 종료 -->
-                                    <th style="width: 30px;">NO.</th>
-                                    <th style="width: 50px;">분류</th>
-                                    <th>이미지</th>
-                                    <th>상품명</th>
-                                    <th>상품가격</th>
-                                    <th>재고수량</th>
-                                    <th style="width: 50px;">상태</th>
-                                    <th style="width: 50px;">수정</th>
-                                    <th style="width: 50px;">삭제</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- 테이블 row 시작-->
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-1">
-                                            <label class="custom-control-label" for="product-select-1"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#1</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-2">
-                                            <label class="custom-control-label" for="product-select-2"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#2</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-3">
-                                            <label class="custom-control-label" for="product-select-3"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#3</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-4">
-                                            <label class="custom-control-label" for="product-select-4"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#4</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-5">
-                                            <label class="custom-control-label" for="product-select-5"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#5</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-6">
-                                            <label class="custom-control-label" for="product-select-6"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#6</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-7">
-                                            <label class="custom-control-label" for="product-select-7"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#7</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-8">
-                                            <label class="custom-control-label" for="product-select-8"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#8</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-9">
-                                            <label class="custom-control-label" for="product-select-9"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#9</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-    
-                                <tr class="table-light text-center">
-                                    <!-- 상품선택 -->
-                                    <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
-                                    <td class="align-middle">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input product-select" id="product-select-10">
-                                            <label class="custom-control-label" for="product-select-10"></label>
-                                        </div>
-                                    </td>
-                                    <!-- 상품 번호-->
-                                    <th scope="row" class="align-middle">#10</th>
-                                    <!-- 카테고리 -->
-                                    <td class="align-middle">DS</td>
-                                    <!-- 상품이미지 -->
-                                    <td class="align-middle">
-                                        <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
-                                    </td>
-                                    <!-- 상품명 -->
-                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
-                                    <!-- 상품가격 -->
-                                    <td class="align-middle">3,500원</td>
-                                    <!-- 재고수량 -->
-                                    <td class="align-middle">22개</td>
-                                    <!-- 상품상태 -->
-                                    <td class="align-middle">
-                                        <div class="tm-status-circle moving"></div>
-                                    </td>
-                                    <!-- 상품수정 -->
-                                    <td class="align-middle">
-                                        <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
-                                    </td>
-                                    <!-- 상품삭제 -->
-                                    <td class="align-middle">
-                                        <a href="#"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- 게시판 페이징 -->
-                    <div class="pagination mt-3 justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <ul class="pagination justify-content-center mt-3 mb-2">
-                                <li class="page-item disabled">
-                                  <a class="page-link" href="#">&laquo;</a>
-                                </li>
-                                <li class="page-item active">
-                                  <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#">4</a>
-                                </li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#">5</a>
-                                </li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#">&raquo;</a>
-                                </li>
-                              </ul>
+                    <form action="#" id="productTableForm">
+                        <div class="table-wrapper">
+                            <table class="table table-hover table-striped">
+                                <thead class="thead-fixed">
+                                    <tr class="table-secondary text-center">
+                                        <!-- 상품 전체 토글 -->
+                                        <th style="width: 30px" class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="totalProductSelect">
+                                                <label class="custom-control-label" for="totalProductSelect"></label>
+                                            </div>
+                                        </th>
+                                        <!-- 토글 종료 -->
+                                        <th style="width: 30px;">NO.</th>
+                                        <th style="width: 50px;">분류</th>
+                                        <th>이미지</th>
+                                        <th>상품명</th>
+                                        <th>상품가격</th>
+                                        <th>재고수량</th>
+                                        <th style="width: 50px;">상태</th>
+                                        <th style="width: 50px;">수정</th>
+                                        <th style="width: 50px;">삭제</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productTableData">
+                                    <!-- 테이블 row 시작-->
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-1">
+                                                <label class="custom-control-label" for="product-select-1"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#1</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-2">
+                                                <label class="custom-control-label" for="product-select-2"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#2</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-3">
+                                                <label class="custom-control-label" for="product-select-3"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#3</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-4">
+                                                <label class="custom-control-label" for="product-select-4"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#4</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-5">
+                                                <label class="custom-control-label" for="product-select-5"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#5</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-6">
+                                                <label class="custom-control-label" for="product-select-6"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#6</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-7">
+                                                <label class="custom-control-label" for="product-select-7"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#7</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-8">
+                                                <label class="custom-control-label" for="product-select-8"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#8</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-9">
+                                                <label class="custom-control-label" for="product-select-9"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#9</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+        
+                                    <tr class="table-light text-center">
+                                        <!-- 상품선택 -->
+                                        <!-- 라벨을 줘야해서 id를 선택해야 했음. js 처리할때 귀찮을 수 있으므로 상의 좀 해봐야 됨. -->
+                                        <td class="align-middle">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input product-select" id="product-select-10">
+                                                <label class="custom-control-label" for="product-select-10"></label>
+                                            </div>
+                                        </td>
+                                        <!-- 상품 번호-->
+                                        <th scope="row" class="align-middle prodNum">#10</th>
+                                        <!-- 카테고리 -->
+                                        <td class="align-middle">DS</td>
+                                        <!-- 상품이미지 -->
+                                        <td class="align-middle">
+                                            <img src="img/왕슈크림도넛.jpg" alt="이미지 깨짐" class="rounded-circle" width="50px">
+                                        </td>
+                                        <!-- 상품명 -->
+                                        <td class="align-middle"><a href="#" data-toggle="modal" data-target="#productDetailsModal">왕슈크림도넛</a></td>
+                                        <!-- 상품가격 -->
+                                        <td class="align-middle">3,500원</td>
+                                        <!-- 재고수량 -->
+                                        <td class="align-middle">22개</td>
+                                        <!-- 상품상태 -->
+                                        <td class="align-middle">
+                                            <div class="tm-status-circle moving"></div>
+                                        </td>
+                                        <!-- 상품수정 -->
+                                        <td class="align-middle">
+                                            <a href="#" data-toggle="modal" data-target="#productUpdateModal"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <!-- 상품삭제 -->
+                                        <td class="align-middle">
+                                            <a href="#" class="product-delete-selector"><i class="far fa-trash-alt tm-product-delete-icon"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <button type="button" class="btn btn-secondary">삭제</button>
+                        <!-- 게시판 페이징 -->
+                        <div class="pagination mt-3 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <ul class="pagination justify-content-center mt-3 mb-2">
+                                    <li class="page-item disabled">
+                                    <a class="page-link" href="#">&laquo;</a>
+                                    </li>
+                                    <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-secondary" id="productDelete">삭제</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 <hr class="hr my-5"/>
 
-                <div class="total-orders p-2 mb-4">
+                <div class="total-orders p-2 mb-4" id="orderList">
                     <div class="d-flex justify-content-between mb-2 align-items-center">
                         <h3>주문 목록 리스트</h3>
                         <form class="form-inline my-2 my-lg-0" id="orderSearchForm">
@@ -510,7 +627,7 @@
                                     <option value="orderId">주문번호</option>
                                     <option value="orderStatus">배송상태</option>
                                 </select>
-                                <input class="form-control mr-sm-0" type="text" placeholder="Search">
+                                <input class="form-control mr-sm-0" type="text" placeholder="Search" id="orderSearchKeyword">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary my-2 my-sm-0" style="height: 35px;" type="submit">검색</button>
                                 </div>
@@ -545,7 +662,7 @@
                                         6개
                                     </td>
                                     <!-- 주문 명 -->
-                                    <td class="align-middle"><a href="#">까망쿠키 치즈 1호 케이크 외 2종</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#orderDetailsModal">까망쿠키 치즈 1호 케이크 외 2종</a></td>
                                     <!-- 주문 금액 -->
                                     <td class="align-middle">35,000원</td>
                                     <!-- 주문 일자 -->
@@ -556,7 +673,7 @@
                                     </td>
                                     <!-- 상품수정 -->
                                     <td class="align-middle">
-                                        <a href="#"><i class="fas fa-pen"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#orderUpdateModal"><i class="fas fa-pen"></i></a>
                                     </td>
                                 </tr>
     
@@ -572,7 +689,7 @@
                                         12개
                                     </td>
                                     <!-- 주문 명 -->
-                                    <td class="align-middle"><a href="#">까놀레</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#orderDetailsModal">까놀레</a></td>
                                     <!-- 주문 금액 -->
                                     <td class="align-middle">42,000원</td>
                                     <!-- 주문 일자 -->
@@ -583,7 +700,7 @@
                                     </td>
                                     <!-- 수정 -->
                                     <td class="align-middle">
-                                        <a href="#"><i class="fas fa-pen"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#orderUpdateModal"><i class="fas fa-pen"></i></a>
                                     </td>
                                 </tr>
     
@@ -599,7 +716,7 @@
                                         1개
                                     </td>
                                     <!-- 주문 명 -->
-                                    <td class="align-middle"><a href="#">진한 가나슈 케이크</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#orderDetailsModal">진한 가나슈 케이크</a></td>
                                     <!-- 주문 금액 -->
                                     <td class="align-middle">28,000원</td>
                                     <!-- 주문 일자 -->
@@ -610,7 +727,7 @@
                                     </td>
                                     <!-- 수정 -->
                                     <td class="align-middle">
-                                        <a href="#"><i class="fas fa-pen"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#orderUpdateModal"><i class="fas fa-pen"></i></a>
                                     </td>
                                 </tr>
     
@@ -626,7 +743,7 @@
                                         11개
                                     </td>
                                     <!-- 주문 명 -->
-                                    <td class="align-middle"><a href="#">갈릭버터소금빵 외 3종</a></td>
+                                    <td class="align-middle"><a href="#" data-toggle="modal" data-target="#orderDetailsModal">갈릭버터소금빵 외 3종</a></td>
                                     <!-- 주문 금액 -->
                                     <td class="align-middle">24,000원</td>
                                     <!-- 주문 일자 -->
@@ -637,7 +754,7 @@
                                     </td>
                                     <!-- 수정 -->
                                     <td class="align-middle">
-                                        <a href="#"><i class="fas fa-pen"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#orderUpdateModal"><i class="fas fa-pen"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -766,7 +883,7 @@
                             
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form action="#">
+                            <form action="#" id="productUpdateForm">
                                 <div class="product-container">
                                     <div class="block-left flex-grow-1">
                                         <div class="form-group flex-column">
@@ -854,13 +971,448 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="orderDetailsModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h3 class="modal-title">주문상세내역</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-content-1">
+                                <h5 class="h5"><strong>주문자정보</strong></h5>
+                                <table class="table table-sm table-bordered">
+                                    <colgroup>
+                                        <col width="120">
+                                        <col width="*">
+                                        <col width="120">
+                                        <col width="*">
+                                    </colgroup>
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="tb-left">주문번호</div>
+                                            </th>
+                                            <td>
+                                                <div class="tb-left">20240813-0001</div>
+                                            </td>			
+                                            <th scope="row">
+                                                <div class="tb-left">주문일자</div>
+                                            </th>
+                                            <td>
+                                                <div class="tb-left">2024.08.13</div>
+                                            </td>				
+                                        </tr>
+                                                        
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="tb-left">주문자</div>
+                                            </th>
+                                            <td>
+                                                <div class="tb-left">황망고</div>
+                                            </td>			
+                                            <th scope="row">
+                                                <div class="tb-left">주문서 입금현황</div>
+                                            </th>
+                                            <td>
+                                                <div class="tb-left">입금완료</div>
+                                            </td>
+                                        </tr>
+                                                        
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="tb-left">주문 메모</div>
+                                            </th>
+                                            <td colspan="3"> 
+                                                <div class="tb-left"></div>
+                                            </td>								
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+						    <div class="modal-content-2">
+                                <h5 class="h5"><strong>배송지 정보</strong></h5>
+                                <table class="table table-sm table-bordered">
+								    <colgroup>
+									    <col width="120">
+									    <col width="*">
+									    <col width="120">
+									    <col width="*">
+								    </colgroup>
+
+								    <tbody>
+								        <tr>
+								            <th scope="row">
+								                <div class="tb-left">송장번호</div>
+								            </th>
+								            <td colspan="3">
+								               <div class="tb-left">CJ대한통운 - 12345678910</div>
+								            </td>
+								        </tr>
+								
+                                        <tr class="">
+                                            <th scope="row" style="width:15%">
+                                                <div class="tb-left">수취인</div>
+                                            </th>
+                                            <td style="width:40%">
+                                                <div class="tb-left">황망고</div>
+                                            </td>
+                                            <th style="width:15%">
+                                                <div class="tb-right">연락처</div>
+                                            </th>
+                                            <td style="width:30%">
+                                                <div class="tb-right">010-7658-3716</div>
+                                            </td>
+                                        </tr>
+								
+								        <tr>
+								            <th scope="row">
+								                <div class="tb-left">주소</div>
+								            </th>
+								            <td colspan="3">
+								                <div class="tb-left">(03077)서울 종로구 창경궁로 254, 402호</div>
+								            </td>
+								        </tr>
+								
+								            <tr>
+								                <th scope="row">
+								                    <div class="tb-left">배송메세지</div>
+								                </th>
+								                <td colspan="3">
+								                    <div class="tb-left">문 앞에 놔주세요.</div>
+								                </td>
+								            </tr>
+								    </tbody>
+								</table>
+                            </div>
+							
+                            <div class="modal-content-3">
+                                <h5 class="h5"><strong>주문상품정보</strong></h5>
+                                <table class="table order-list-table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th scope="row">
+                                                이미지
+                                            </th>
+                                            <th scope="row">
+                                                주문상품
+                                            </th>
+                                            <th scope="row">
+                                                수량
+                                            </th>
+                                            <th scope="row">
+                                                가격
+                                            </th>		
+                                            <th scope="row">
+                                                처리상태
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>
+                                                <div class="tb-center"><img src="img/bread/자연효모빵.jpg" style="width: 100px; height: 100px"></div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-left">자연효모빵</div>
+                                            </td>					
+                                            <td>
+                                                <div class="tb-center">2</div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center"><strong><font color="#FF5D00">9,200원</font></strong></div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center"><strong><font color="blue">배송중</font></strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>
+                                                <div class="tb-center"><img src="img/bread/오렌지케익.jpg" style="width: 100px; height: 100px"></div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-left">오렌지케잌</div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center">1</div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center"><strong><font color="#FF5D00">22,000원</font></strong></div>
+                                            </td>
+                                            <td>
+                                                <div class="tb-center"><strong><font color="blue">배송중</font></strong></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6" style=text-align:right;>31,200원(상품구매금액) + 0원(배송료) = <b>31,200</b>원</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <!-- 모달컨텐츠영역 end-->
+                        </div>
+                    </div>
+                </div>
             <!-- 모달 끝 -->
-        </div>
+            </div>
+
+            <div class="modal fade" id="orderUpdateModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h3 class="modal-title">주문상세내역</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="#" id="orderUpdateSubmit">
+                                <div class="modal-content-1">
+                                    <h5 class="h5"><strong>주문자정보</strong></h5>
+                                    <table class="table table-sm table-bordered">
+                                        <colgroup>
+                                            <col width="120">
+                                            <col width="*">
+                                            <col width="120">
+                                            <col width="*">
+                                        </colgroup>
+                                        
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="tb-left">주문번호</div>
+                                                </th>
+                                                <td>
+                                                    <div class="tb-left">20240813-0001</div>
+                                                </td>			
+                                                <th scope="row">
+                                                    <div class="tb-left">주문일자</div>
+                                                </th>
+                                                <td>
+                                                    <div class="tb-left">2024.08.13</div>
+                                                </td>				
+                                            </tr>
+                                                            
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="tb-left">주문자</div>
+                                                </th>
+                                                <td>
+                                                    <div class="tb-left">황망고</div>
+                                                </td>			
+                                                <th scope="row">
+                                                    <div class="tb-left">주문서 입금현황</div>
+                                                </th>
+                                                <td>
+                                                    <div class="tb-left">입금완료</div>
+                                                </td>
+                                            </tr>
+                                                            
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="tb-left">주문 메모</div>
+                                                </th>
+                                                <td colspan="3"> 
+                                                    <div class="d-flex align-items-center">
+                                                        <textarea id="memo" rows="1" style="resize: none; width:95%;"></textarea>
+                                                    </div>
+                                                </td>								
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-content-2">
+                                    <h5 class="h5"><strong>배송지 정보</strong></h5>
+                                    <table class="table table-sm table-bordered">
+                                        <colgroup>
+                                            <col width="120">
+                                            <col width="*">
+                                            <col width="120">
+                                            <col width="*">
+                                        </colgroup>
+    
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="tb-left">송장번호</div>
+                                                </th>
+                                                <td colspan="3">
+                                                <div class="tb-left">CJ대한통운 - 12345678910</div>
+                                                </td>
+                                            </tr>
+                                    
+                                            <tr>
+                                                <th scope="row" style="width:15%">
+                                                    <div class="tb-left">
+                                                        수취인
+                                                    </div>
+                                                </th>
+                                                <td style="width:40%">
+                                                    <div class="tb-left d-flex align-items-center">
+                                                        <input id="receiver" value="황망고" style="width: 60%;" required />
+                                                    </div>
+                                                </td>
+                                                <th style="width:15%">
+                                                    <div class="tb-right">연락처</div>
+                                                </th>
+                                                <td style="width:30%">
+                                                    <div class="tb-right">
+                                                        <input id="receiverPhone" value="010-7658-3716" style="width: 80%;" required />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="tb-left">주소</div>
+                                                </th>
+                                                <td colspan="3">
+                                                    <div class="input-group d-flex justify-content-start w-100">
+                                                        <input id="recevierPostNo" class="form-control" value="03077" style="width: 10%;" disabled/>
+                                                        <input id="recevierAddr" class="form-control input-group-append" value="서울 종로구 창경궁로 254" style="width: 50%;" disabled/>
+                                                        <input id="recevierDetailsAddr" class="form-control input-group-append" value="402호" style="width: 20%;" required />
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-secondary " type="button" onclick="execDaumPostcode()">주소검색</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div class="tb-left">배송메세지</div>
+                                                    </th>
+                                                    <td colspan="3">
+                                                        <div class="tb-left">문 앞에 놔주세요.</div>
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="modal-content-3">
+                                    <h5 class="h5"><strong>주문상품정보</strong></h5>
+                                    <table class="table order-list-table">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="row">
+                                                    이미지
+                                                </th>
+                                                <th scope="row">
+                                                    주문상품
+                                                </th>
+                                                <th scope="row">
+                                                    수량
+                                                </th>
+                                                <th scope="row">
+                                                    가격
+                                                </th>		
+                                                <th scope="row">
+                                                    처리상태
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="orderProductData">
+                                            <tr class="text-center">
+                                                <td>
+                                                    <div class="tb-center"><img src="img/bread/자연효모빵.jpg" style="width: 100px; height: 100px"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="product-name">자연효모빵</div>
+                                                </td>					
+                                                <td>
+                                                    <div class="tb-center">2</div>
+                                                </td>
+                                                <td>
+                                                    <div class="tb-center"><strong>9,200원</strong></div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center">
+                                                        <select class="form-control" id="orderState1" style="width:50%;">
+                                                            <option value="1">배송대기</option>
+                                                            <option value="2" selected>배송중</option>
+                                                            <option value="3">배송완료</option>
+                                                            <option value="4">주문취소</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td>
+                                                    <div class="tb-center"><img src="img/bread/오렌지케익.jpg" style="width: 100px; height: 100px"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="product-name">오렌지케잌</div>
+                                                </td>
+                                                <td>
+                                                    <div class="tb-center">1</div>
+                                                </td>
+                                                <td>
+                                                    <div class="tb-center"><strong>22,000원</strong></div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center">
+                                                        <select class="form-control" id="orderState2" style="width:50%;">
+                                                            <option value="1">배송대기</option>
+                                                            <option value="2" selected>배송중</option>
+                                                            <option value="3">배송완료</option>
+                                                            <option value="4">주문취소</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4" style=text-align:right;>
+                                                    <div class="d-flex justify-content-end align-items-center mt-1">
+                                                        31,200원(상품구매금액) + 0원(배송료) = <b>31,200</b>원
+                                                    </div>
+                                                </td>
+                                                <td colspan="2" class="pr-0">
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                        <button type="submit" class="btn btn-secondary btn-sm">수정</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </form>
+                            <!-- 모달컨텐츠영역 end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 모달 끝 -->
     </div>
+	</div>
+    <footer>
+    	<br>
+        <div class="footer-container d-flex justify-content-center align-items-center">
+            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px;" >
+            <div>
+                <p>(주)토박이</p>
+                <p>호스팅제공자: KOSA | 이메일 <a href="tobaki@test.com" class="text-danger">tobaki@test.com</a></p>
+                <p>조장 양정윤 | 사업자등록번호 xxx-xx-xxxxx[사업자정보확인] | 통신판매업신고번호 2024-서울종로-0402호</p>
+                <p>주소: 서울시 종로구 창경궁로 254 동원빌딩</p>
+                <p>토박이특산물은 KOSA의 위탁으로 오티아이3기 4명의 학생들이 운영하는 쇼핑몰입니다.</p>
+                <p>copyright (c) 2024 by TOBAKI. all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>

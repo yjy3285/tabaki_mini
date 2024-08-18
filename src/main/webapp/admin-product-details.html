@@ -6,9 +6,125 @@
     <title>관리자 - 상품등록</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
+
+	<header>
+		<!-- 헤더의 상단 프레임 -->
+		<div class="header-wrapper">
+			<!--헤더 탑 영역-->
+			<div class="header-top">
+				<!--왼쪽 상단 프레임-->
+				<div class="left-top"></div>
+				<!--오른쪽 상단 nav-->
+				<div class="right-top-nav">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light header-font">
+						<!--
+						<a class="navbar-brand" href="#">Navbar</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						-->
+						<div class="collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item active">
+									<a class="nav-link" href="index.html">메인
+										<span class="sr-only">(current)</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="login.html">로그인</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="member.html">회원가입</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="mypage-main.html">마이페이지</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="center-board-list.html" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="center-board-list.html">공지사항</a>
+										<a class="dropdown-item" href="center-board-list.html">상품문의</a>
+										<a class="dropdown-item" href="center-board-list.html">상품후기</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="admin-main.html">관리자 사이트</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!--중앙 메인 로고 프레임-->
+			<div class="main-logo">
+				<a href="index.html"><img src="img/main-logo.png" width="150px"></a>
+			</div>
+
+			<div class="d-flex" style="margin-left: 30px;">
+				<!-- 헤더의 하단 프레임-->
+				<div class="header-bottom container-fluid">
+					<nav class="top-nav navbar navbar-expand-lg navbar-light bg-light header-font w-100 pl-0">
+						<!--전체 카테고리 버튼-->
+						<div class="top-ctg-list">
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+								<button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle header-font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
+								</button>
+								<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
+									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
+								</div>
+							</div><!--
+							<a href="#">"카테고리버튼"</a>
+							<div class="top-ctg">
+								<div class="left-category clear">
+									ul 태그를 통한 하단 리스트들~
+								</div>
+								-->
+						</div>
+						<!--추가 상단 네비게이션 리스트-->
+						<div class="top-menu collapse navbar-collapse" id="navbarColor03">
+							<ul class="navbar-nav mr-auto header-font-size ">
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">베스트</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">신상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="itemList-best.html">추천상품</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="center-board-list.html">공지사항</a>
+								</li>
+							</ul>
+						</div>
+						<!--상단네비 검색 및 장바구니-->
+						<form action="#" id="headerSearch">
+							<div class="top-menu-finder-cart align-self-end">
+								<div class="top-finder">
+									<div class="input-group">
+										<input class="form-control headerSearchInput" type="text" placeholder="상품 검색">
+										<div class="input-group-append">
+											<button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart">
+									<a href="orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>									<span class="cart-count">3</span>
+								</div>
+							</div>
+						</form>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
     <div class="container">
         <div class="main-content">
             <!-- 사이드바 시작 -->
@@ -21,7 +137,7 @@
                 <h3>상품관리</h3>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item"><a class="nav-link active" href="admin-product-details.html">상품등록</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">주문조회</a></li>                   
+                    <li class="nav-item"><a class="nav-link" href="admin-main.html#orderList">주문조회</a></li>                   
                 </ul>
                 <hr class="hr"/>
                 <h3>고객센터</h3>
@@ -36,25 +152,36 @@
                 <h2>상품 등록</h2>
                 <hr class="hr">
                 <div class="d-flex form-wrapper my-4">
-                    <form action="#">
+                    <form action="#" id="productInsertForm">
                         <div class="product-container">
                             <div class="block-left flex-grow-1">
                                 <!-- 상품 이름 -->
                                 <div class="form-group">
                                     <label for="product-name"><b>상품명</b></label>
-                                    <input type="text" class="form-control" id="product-name" aria-describedby="productName" placeholder="상품 이름 입력">
+                                    <input type="text" class="form-control" id="product-name" aria-describedby="productName" placeholder="상품 이름 입력" required>
                                 </div>
                                 <!-- 상품 상세 -->
                                 <div class="form-group">
                                     <label for="product-details"><b>상품상세</b></label>
-                                    <textarea class="form-control" id="product-details" rows="5"></textarea>
+                                    <textarea class="form-control" id="product-details" rows="5" required></textarea>
                                     <input type="file" class="form-control-file mt-1" id="product-details-imagefile" aria-describedby="details-imagefile">
                                 </div>
+                                <!-- 상세이미지 경로 뽑기 위해 넣은 임시 스크립트 영역입니다. 백단에서는 지워도 됩니다. -->
+                                <script>
+                                    let prodDetailsImagePath;
+                                    document.getElementById('product-details-imagefile').addEventListener('change', function(event) {
+                                        const file = event.target.files[0];
+                                        if (file) {
+                                            prodDetailsImagePath = URL.createObjectURL(file);
+                                        }
+                                    });
+                                </script>
+                                <!-- 임시 스크립트 영역 종료 -->
                                 <!-- 카테고리 선택 -->
                                 <div class="form-group">
                                     <label for="product-category"><b>카테고리</b></label>
-                                    <select class="form-control form-select" id="product-category">
-                                      <option selected>카테고리 선택</option>
+                                    <select class="form-control form-select" id="product-category" required>
+                                      <option disabled selected>카테고리 선택</option>
                                       <option value="bread">Bread</option>
                                       <option value="cake">Cake</option>
                                       <option value="desert">Desert</option>
@@ -64,19 +191,19 @@
                                 <div class="d-flex justify-content-between" style="width: 95%;">
                                     <div class="form-group">
                                         <label for="product-price"><b>상품가격</b></label>
-                                        <input type="number" class="form-control" id="product-price" aria-describedby="productPrice" placeholder="상품 가격">
+                                        <input type="number" class="form-control" id="product-price" placeholder="상품 가격" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="product-amount"><b>상품수량</b></label>
-                                        <input type="number" class="form-control" id="product-amount" aria-describedby="productAmount" placeholder="수량 설정">
+                                        <input type="number" class="form-control" id="product-amount" placeholder="수량 설정" required>
                                     </div>
                                 </div>
                                 <!-- 배송업체 / 배송비용 -->
                                 <div class="d-flex justify-content-between" style="width: 95%;">
                                     <div class="form-group flex-sort">
                                         <label for="delivery-company"><b>배송업체</b></label>
-                                        <select class="form-control form-select" id="delivery-company">
-                                          <option selected>배송업체 선택</option>
+                                        <select class="form-control form-select" id="delivery-company" required>
+                                          <option disabled selected>배송업체 선택</option>
                                           <option value="1">대한통운</option>
                                           <option value="2">한진택배</option>
                                           <option value="3">롯데택배</option>
@@ -84,7 +211,7 @@
                                     </div>
                                     <div class="form-group flex-sort">
                                         <label for="delivery-price"><b>배송가격</b></label>
-                                        <input type="number" class="form-control" id="delivery-price" aria-describedby="deliveryPrice" placeholder="배송 가격">
+                                        <input type="number" class="form-control" id="delivery-price" placeholder="배송 가격">
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +235,8 @@
                                 <label for="productState"><b>상품상태 설정</b></label>
                                 <div class="form-group d-flex justify-content-between" style="width: 95%;">
                                     <div class="flex-sort">
-                                        <select class="form-control form-select" id="productState">
-                                          <option selected>상품상태</option>
+                                        <select class="form-control form-select" id="productState" required>
+                                          <option disabled selected>상품상태</option>
                                           <option value="1">판매중</option>
                                           <option value="2">상품품절</option>
                                           <option value="3">판매중단</option>
@@ -117,7 +244,7 @@
                                     </div>
                                     <div class="flex-sort d-flex justify-content-center align-items-center checkbox-area">
                                         <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="recommendedProduct" value="recommendedProd" checked>
+                                            <input type="checkbox" class="custom-control-input" id="recommendedProduct" value="recommendedProd">
                                             <label class="custom-control-label" for="recommendedProduct"><b>추천상품 설정</b></label>
                                         </div>
                                     </div>
@@ -137,6 +264,21 @@
             <!-- 메인 섹션 종료 -->
         </div>
     </div>
+
+    <footer>
+    	<br>
+        <div class="footer-container d-flex justify-content-center align-items-center">
+            <img src="https://i.ibb.co/PZPP7Br/logo.png" width="150px" style="margin-right:50px;" >
+            <div>
+                <p>(주)토박이</p>
+                <p>호스팅제공자: KOSA | 이메일 <a href="tobaki@test.com" class="text-danger">tobaki@test.com</a></p>
+                <p>조장 양정윤 | 사업자등록번호 xxx-xx-xxxxx[사업자정보확인] | 통신판매업신고번호 2024-서울종로-0402호</p>
+                <p>주소: 서울시 종로구 창경궁로 254 동원빌딩</p>
+                <p>토박이특산물은 KOSA의 위탁으로 오티아이3기 4명의 학생들이 운영하는 쇼핑몰입니다.</p>
+                <p>copyright (c) 2024 by TOBAKI. all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

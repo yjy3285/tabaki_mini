@@ -195,3 +195,6 @@ h2.border-bottom {
     height: 100%;
     object-fit: cover;
 }
+.breadcrumb-container {
+    margin-left: 35px;
+}
