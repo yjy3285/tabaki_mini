@@ -1,3 +1,13 @@
+// 삭제 버튼 클릭 시 해당 행 삭제
+document.querySelectorAll('.btn-danger.btn-sm').forEach(function(button) {
+    button.addEventListener('click', function() {
+        const row = this.closest('tr');
+        row.remove(row);
+        updateTotalPrice();
+    });
+});
+
+
 // 선택삭제 버튼 기능
 document.querySelector('.btns_order .btn-outline-secondary:nth-child(1)').addEventListener('click', function () {
     const checkedItems = document.querySelectorAll('#cartTable tbody input[type="checkbox"]:checked');
@@ -8,13 +18,10 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(1)').addEve
     updateTotalPrice();
 });
 
-// 삭제 버튼 클릭 시 해당 행 삭제
-document.querySelectorAll('.btn-danger.btn-sm').forEach(function(button) {
-    button.addEventListener('click', function() {
-        const row = this.closest('tr');
-        row.remove(row);
-        updateTotalPrice();
-    });
+
+// 계속 쇼핑하기 버튼 기능
+document.querySelector('.btns_order .btn-outline-secondary:nth-child(2)').addEventListener('click', function () {
+    window.location.href = 'itemList-static.html';
 });
 
 // 장바구니 비우기 버튼 기능
@@ -25,6 +32,7 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(3)').addEve
     });
     updateTotalPrice();
 });
+
 
 // 선택상품 주문하기 버튼 기능
 document.querySelector('.btns_order .btn-outline-danger').addEventListener('click', function () {
