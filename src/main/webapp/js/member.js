@@ -99,6 +99,6 @@ function showEmailAlert() {
 
 function showJoinAlert() {
     if (validateForm == true) {
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
     }
 }

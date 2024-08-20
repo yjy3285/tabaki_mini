@@ -21,7 +21,7 @@ document.querySelector('.btns_order .btn-outline-secondary:nth-child(1)').addEve
 
 // 계속 쇼핑하기 버튼 기능
 document.querySelector('.btns_order .btn-outline-secondary:nth-child(2)').addEventListener('click', function () {
-    window.location.href = 'itemList-static.html';
+    window.location.href = '../product/itemList-static.html';
 });
 
 // 장바구니 비우기 버튼 기능
@@ -101,7 +101,7 @@ document.querySelector('.btns_order .btn-outline-danger').addEventListener('clic
     const checkedItems = document.querySelectorAll('#cartTable tbody input[type="checkbox"]:checked');
     
     if (checkedItems.length > 0) {
-        window.location.href = 'mypage-order.html';
+        window.location.href = '../mypage/mypage-order.html';
     } else {
         alert("선택된 제품이 없습니다.");
     }

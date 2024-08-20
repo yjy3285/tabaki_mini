@@ -5,8 +5,8 @@
     <title>아이템 목록</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/itemList.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/itemList.css">
 </head>
 <body>
 <div id="wrap">
@@ -30,27 +30,27 @@
 						<div class="collapse navbar-collapse" id="navbarColor03">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
-									<a class="nav-link" href="index.html">메인
+									<a class="nav-link" href="../index.html">메인
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="login.html">로그인</a>
+									<a class="nav-link" href="../member/login.html">로그인</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="member.html">회원가입</a>
+									<a class="nav-link" href="../member/member-info.html">회원가입</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="mypage-main.html">마이페이지</a>
+									<a class="nav-link" href="../mypage/mypage-main.html">마이페이지</a>
 								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="center-board-list.html" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../center/center-board-list.html" role="button" aria-haspopup="true" aria-expanded="false">고객센터</a>
 									<div class="dropdown-menu">
-										<a class="dropdown-item" href="center-board-list.html">공지사항</a>
-										<a class="dropdown-item" href="center-board-list.html">상품문의</a>
-										<a class="dropdown-item" href="center-board-list.html">상품후기</a>
+										<a class="dropdown-item" href="../center/center-board-list.html">공지사항</a>
+										<a class="dropdown-item" href="../center/center-board-list.html">상품문의</a>
+										<a class="dropdown-item" href="../center/center-board-list.html">상품후기</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="admin-main.html">관리자 사이트</a>
+										<a class="dropdown-item" href="../admin/admin-main.html">관리자 사이트</a>
 									</div>
 								</li>
 							</ul>
@@ -60,7 +60,7 @@
 			</div>
 			<!--중앙 메인 로고 프레임-->
 			<div class="main-logo">
-				<a href="index.html"><img src="img/main-logo.png" width="150px"></a>
+				<a href="../index.html"><img src="../img/main-logo.png" width="150px"></a>
 			</div>
 
 			<div class="d-flex" style="margin-left: 30px;">
@@ -74,9 +74,9 @@
 									<i class="fa fa-bars"></i>&emsp;카테고리&emsp;
 								</button>
 								<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
-									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
-									<a class="dropdown-item py-2" href="itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
+									<a class="dropdown-item py-2" href="../product/itemList-static.html"><i class="fa fa-bread-slice"></i> :: 빵</a>
+									<a class="dropdown-item py-2" href="../product/itemList-static.html"><i class="fa fa-birthday-cake"></i> :: 케이크</a>
+									<a class="dropdown-item py-2" href="../product/itemList-static.html"><i class="fa fa-cookie"></i> :: 디저트</a>
 								</div>
 							</div><!--
 							<a href="#">"카테고리버튼"</a>
@@ -90,16 +90,16 @@
 						<div class="top-menu collapse navbar-collapse" id="navbarColor03">
 							<ul class="navbar-nav mr-auto header-font-size ">
 								<li class="nav-item">
-									<a class="nav-link" href="itemList-best.html">베스트</a>
+									<a class="nav-link" href="../product/itemList-best.html">베스트</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="itemList-best.html">신상품</a>
+									<a class="nav-link" href="../product/itemList-best.html">신상품</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="itemList-best.html">추천상품</a>
+									<a class="nav-link" href="../product/itemList-best.html">추천상품</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="center-board-list.html">공지사항</a>
+									<a class="nav-link" href="../center/center-board-list.html">공지사항</a>
 								</li>
 							</ul>
 						</div>
@@ -115,7 +115,7 @@
 									</div>
 								</div>
 								<div class="top-cart">
-									<a href="orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>									
+									<a href="../order/orderCart-static.html"><i class="fas fa-shopping-cart icon-size"></i></a>									
 									<span class="cart-count">3</span>
 								</div>
 							</div>
@@ -130,17 +130,17 @@
     <div id="contentWrapper">
 			<nav class="breadcrumb-container">
 	            <ol class="breadcrumb">
-	                <li class="breadcrumb-item"><a href="index.html" style="color: black !important;"><i class="fas fa-home"></i></a></li>
-	                <li class="breadcrumb-item"><a href="orderCart-static.html" style="color: black !important;">빵</a></li>            
+	                <li class="breadcrumb-item"><a href="../index.html" style="color: black !important;"><i class="fas fa-home"></i></a></li>
+	                <li class="breadcrumb-item"><a href="../order/orderCart-static.html" style="color: black !important;">빵</a></li>            
 	            </ol>
         	</nav>      
         <!-- 상품 목록 내용 -->
         <div id="contentWrap">
             <div id="top_category">
                 <ul>
-                    <li id="bread"><a href="itemList_bread.html">빵</a></li>
-                    <li id="cake"><a href="itemList_cake.html">케이크</a></li>
-                    <li id="desert"><a href="itemList_desert.html">디저트</a></li>
+                    <li id="bread"><a href="../prduct/itemList_bread.html">빵</a></li>
+                    <li id="cake"><a href="../product/itemList_cake.html">케이크</a></li>
+                    <li id="desert"><a href="../product/itemList_desert.html">디저트</a></li>
                 </ul>
             </div>
             <div class="item_info">
@@ -153,14 +153,14 @@
                 <dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/걀렛뜨 데로와 푀유떼.jpg" onclick="location.href='itemDetail-static.html'">
-                        <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
+                        <img class="prd_img" src="../img/bread/걀렛뜨 데로와 푀유떼.jpg" onclick="location.href='../product/itemDetail-static.html'">
+                        <div class="cart-overlay" onclick="location.href='../order/orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">걀렛뜨 데로와 푀유떼</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">걀렛뜨 데로와 푀유떼</a></li>
                             <li class="prd_price">9,800원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -170,14 +170,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/로데브.jpg" onclick="location.href='itemDetail-static.html'">
-                        <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
+                        <img class="prd_img" src="../img/bread/로데브.jpg" onclick="location.href='../product/itemDetail-static.html'">
+                        <div class="cart-overlay" onclick="location.href='../order/orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">로데브</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">로데브</a></li>
                             <li class="prd_price">12,000원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -187,14 +187,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/바따르.jpg" onclick="location.href='itemDetail-static.html'">
+                        <img class="prd_img" src="../img/bread/바따르.jpg" onclick="location.href='../product/itemDetail-static.html'">
                         <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">바따르</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">바따르</a></li>
                             <li class="prd_price">3,800원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -204,14 +204,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/자연효모빵.jpg" onclick="location.href='itemDetail-static.html'">
-                        <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
+                        <img class="prd_img" src="../img/bread/자연효모빵.jpg" onclick="location.href='../product/itemDetail-static.html'">
+                        <div class="cart-overlay" onclick="location.href='../product/orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">자연효모빵</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">자연효모빵</a></li>
                             <li class="prd_price">1,800원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -222,14 +222,14 @@
                 <dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/카스텔라.jpg" onclick="location.href='itemDetail-static.html'">
+                        <img class="prd_img" src="../img/bread/카스텔라.jpg" onclick="location.href='../product/itemDetail-static.html'">
                         <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">카스텔라</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">카스텔라</a></li>
                             <li class="prd_price">3,000원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -239,14 +239,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/오렌지케익.jpg" onclick="location.href='itemDetail-static.html'">
+                        <img class="prd_img" src="../img/bread/오렌지케익.jpg" onclick="location.href='../product/itemDetail-static.html'">
                         <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">오렌지케익</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">오렌지케익</a></li>
                             <li class="prd_price">4,400원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -256,14 +256,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/마블케익.jpg" onclick="location.href='itemDetail-static.html'">
+                        <img class="prd_img" src="../img/bread/마블케익.jpg" onclick="location.href='../product/itemDetail-static.html'">
                         <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">마블케익</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">마블케익</a></li>
                             <li class="prd_price">4,000원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
@@ -273,14 +273,14 @@
 				<dl class="item_elem">
                     <div class="badge">BEST</div>
                     <dt class="thumb">
-                        <img class="prd_img" src="./img/bread/뺑드미.jpg" onclick="location.href='itemDetail-static.html'">
-                        <div class="cart-overlay" onclick="location.href='orderCart-static.html'">
+                        <img class="prd_img" src="../img/bread/뺑드미.jpg" onclick="location.href='../product/itemDetail-static.html'">
+                        <div class="cart-overlay" onclick="location.href='../order/orderCart-static.html'">
                             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="장바구니로 이동">
                         </div>
                     </dt>
                     <dd>
                         <ul>
-                            <li class="prd_title"><a href="itemDetail-static.html">뺑드미</a></li>
+                            <li class="prd_title"><a href="../product/itemDetail-static.html">뺑드미</a></li>
                             <li class="prd_price">3,300원</li>
                             <li class="prd_review"><em>상품후기</em> (8)</li>
                         </ul>
